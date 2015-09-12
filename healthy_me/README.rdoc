@@ -17,12 +17,12 @@ A web application that provides health suggestions to people who are about to ru
 * Database: Postgres 9.4.4.0  
 
 * Secrets: Create a .env file in your root directoty and add the following environment variables:  
-	secret_key_base=  
-	APP_ID=  
-	APP_SECRET=  
+	** secret_key_base=   
+	** APP_ID=  
+	** APP_SECRET=  
 
-	secret_key_base refers to the numeric value that Rails gives you when you create a new applicatoin. Look in your secrets.yml file to find this number.  
+	** secret_key_base refers to the numeric value that Rails gives you when you create a new applicatoin. Look in your secrets.yml file to find this number.  
 	
-	APP_ID and APP_SECRET refer to Facebook application identifiers. To obtain this numeric value, you will need to go to Facebook's developer page to register a new app. 
+	**APP_ID and APP_SECRET refer to Facebook application identifiers. To obtain these numeric values, you will need to go to Facebook's developer page to register a new app. 
 
 * To do: create and write instruction on how to run the test suite  
