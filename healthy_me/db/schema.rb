@@ -31,6 +31,9 @@ ActiveRecord::Schema.define(version: 20150911231752) do
     t.datetime "updated_at",                          null: false
     t.string   "provider"
     t.string   "uid"
+    t.string   "fitbit_token"
+    t.string   "fitbit_secret"
+    t.string   "fitbit_id"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

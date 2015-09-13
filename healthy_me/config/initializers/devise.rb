@@ -22,7 +22,7 @@ Devise.setup do |config|
   # :mongoid (bson_ext recommended) by default. Other ORMs may be
   # available as additional gems.
   require 'devise/orm/active_record'
-  config.omniauth :facebook, ENV["APP_ID"], ENV["APP_SECRET"], scope: 'email', info_fields: 'email'
+
   # ==> Configuration for any authentication mechanism
   # Configure which keys are used when authenticating a user. The default is
   # just :email. You can configure it to use [:username, :subdomain], so for
@@ -236,6 +236,8 @@ Devise.setup do |config|
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
+  config.omniauth :facebook, ENV["APP_ID"], ENV["APP_SECRET"], scope: 'email', info_fields: 'email'
+  config.omniauth :fitbit, ENV["FITBIT_CLIENT_KEY"], ENV["FITBIT_CLIENT_SECRET"], scope: 'nutrition'
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
