@@ -7,12 +7,13 @@ Rails.application.routes.draw do
 	end
 	root to: "users#index"
   get 'users', to: 'users#index'
+  get 'users/data', to: 'users#health_data'
 
   
 end
 
 
-#                   Prefix Verb     URI Pattern                            Controller#Action
+# Prefix Verb     URI Pattern                            Controller#Action
 #         new_user_session GET      /users/sign_in(.:format)               devise/sessions#new
 #             user_session POST     /users/sign_in(.:format)               devise/sessions#create
 #     destroy_user_session DELETE   /users/sign_out(.:format)              devise/sessions#destroy
@@ -33,3 +34,4 @@ end
 #                   logout GET      /logout(.:format)                      devise/sessions#destroy
 #                     root GET      /                                      users#index
 #                    users GET      /users(.:format)                       users#index
+#               users_data GET      /users/data(.:format)                  users#health_data

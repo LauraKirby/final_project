@@ -13,10 +13,13 @@ class CallbacksController < Devise::OmniauthCallbacksController
 #does fitbit give me access to what was completed last week?
 #maybe use firebase to update datbases live 
   def fitbit
-		current_user.fitbit_token = request.env["omniauth.auth"].credentials.token
-  	current_user.fitbit_secret = request.env["omniauth.auth"].credentials.secret
-    binding.pry
+		data = request.env["omniauth.auth"]
+    current_user.fitbit_token = data.credentials.token
+  	current_user.fitbit_secret = data.credentials.secret
+    #binding.pry
     current_user.save!
-  	redirect_to :users
+    redirect_to :users
   end 
 end
+
+#make an api, just a route that sends/renders json
