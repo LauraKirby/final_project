@@ -1,7 +1,7 @@
 
 <h1>Healthy Me</h1>
 
-<h3>Hello signed in user</h3>
+<h3>Hello <%= current_user  %> </h3>
 
 <p>3 ways to collect user data:</p>
 <ul>
@@ -11,7 +11,7 @@
 </ul>
 
 <p>
-	1. <a href="http://localhost:3000/users/auth/fitbit/">Connect Fitbit</a>
+	1. <a href="http://localhost:3000/users/auth/fitbit/">Connect with <%= image_tag("fitbit_logo.png") %></a>
 </p>
 <p>
 	2. <a href="users/dataform">Add data manually</a>
@@ -19,6 +19,3 @@
 <p>
 	3. Don't have a Fitbit? That's ok, head to <a href="https://www.fitbit.com/SignUp" target="blank">Fitbit.com/signup</a> to create a free account. 
 </p>
-
-
-

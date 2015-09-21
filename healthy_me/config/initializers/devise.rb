@@ -236,7 +236,7 @@ Devise.setup do |config|
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
-  config.omniauth :facebook, ENV["APP_ID"], ENV["APP_SECRET"], scope: 'email', info_fields: 'email'
+  config.omniauth :facebook, ENV["APP_ID"], ENV["APP_SECRET"], scope: 'email', info_fields: 'first_name,last_name,email,picture'
   config.omniauth :fitbit, ENV["FITBIT_CLIENT_KEY"], ENV["FITBIT_CLIENT_SECRET"], scope: 'nutrition'
 
   # ==> Warden configuration
