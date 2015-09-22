@@ -12,7 +12,11 @@ before_action :authenticate_user!
 			#myArray = [email:"laurakirby26", name:"laura", city:"SF", state:"California"]
 			myDataHash = {userdata:[{email:"laura@email", name:"laura", city:"SF", state:"California"}, {email:"america@email", name:"america", city:"LA", state:"California"},{email:"john@email", name:"john", city:"PS", state:"California"}]}
 			format.html {render html:current_user, :partial => "users/show.erb"}
-			format.json {render json:myDataHash, :partial => "users/show.json"}
+			format.json {render json:current_user, :partial => "users/show.json"}
+
+			#parse JSON -- new_var = parseJSON(pass JSON file)
+			#r1 = Race.create(name:current_user.name, distance:current_user.distance)
+
 			p current_user
 			
 

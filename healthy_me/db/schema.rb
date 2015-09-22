@@ -11,10 +11,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150921220033) do
+ActiveRecord::Schema.define(version: 20150922191454) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "races", force: :cascade do |t|
+    t.string   "name"
+    t.string   "start_location"
+    t.string   "end_location"
+    t.string   "date"
+    t.string   "distance"
+    t.string   "cost"
+    t.string   "map"
+    t.string   "elevation"
+    t.string   "checkpoints"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.string   "image_url"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -35,9 +50,22 @@ ActiveRecord::Schema.define(version: 20150921220033) do
     t.string   "fitbit_secret"
     t.string   "first_name"
     t.string   "last_name"
+    t.string   "image_url"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  create_table "users_races", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "race_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "users_races", ["race_id"], name: "index_users_races_on_race_id", using: :btree
+  add_index "users_races", ["user_id"], name: "index_users_races_on_user_id", using: :btree
+
+  add_foreign_key "users_races", "races"
+  add_foreign_key "users_races", "users"
 end
