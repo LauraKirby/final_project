@@ -15,8 +15,10 @@ r1 = Race.create(name: b2b_hash["name"], distance: b2b_hash["distance"], image_u
 r2 = Race.create(name: "Boston Marathon", distance: "26 miles", image_url:"http://bit.ly/1OOXsyT", date: "04/15/2016", cost: 175)
 
 u1.races << r1
+u1.save!
 
 u2.races << r2
+u2.save!
 
 #use ruby's open method to access json file
 #then parseJSON

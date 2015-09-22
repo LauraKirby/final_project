@@ -14,8 +14,9 @@ class CallbacksController < Devise::OmniauthCallbacksController
   #does fitbit give me access to what was completed last week? yes, you can pass in the date
   #maybe use firebase to update datbases in real time
   def fitbit
+    data = request.env["omniauth.auth"]
     #method below is set up in the user model
-    fit_client
+    current_user.fit_client(data)
     redirect_to :users 
   end 
 end

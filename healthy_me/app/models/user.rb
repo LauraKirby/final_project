@@ -17,9 +17,9 @@ class User < ActiveRecord::Base
     end
   end
 
-  def fit_client
+  def fit_client(data)
     config = {}
-    data = request.env["omniauth.auth"]
+    
     config[:oauth] = {consumer_key: ENV["FITBIT_CLIENT_KEY"],
           consumer_secret: ENV["FITBIT_CLIENT_SECRET"],
           ssl: true,
@@ -30,10 +30,10 @@ class User < ActiveRecord::Base
 
     client.activities_on_date('today') #works!
 
-    current_user.fitbit_token = data.credentials.token
-    current_user.fitbit_secret = data.credentials.secret
+    self.fitbit_token = data.credentials.token
+    self.fitbit_secret = data.credentials.secret
    
-    current_user.save!
+    save!
     #redirect_to :users
   end 
 
