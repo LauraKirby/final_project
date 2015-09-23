@@ -11,10 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150922191454) do
+ActiveRecord::Schema.define(version: 20150923180634) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "fitness_plans", force: :cascade do |t|
+    t.integer  "race_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.string   "plan_title"
+    t.string   "plan_summary"
+  end
+
+  add_index "fitness_plans", ["race_id"], name: "index_fitness_plans_on_race_id", using: :btree
 
   create_table "races", force: :cascade do |t|
     t.string   "name"
@@ -30,6 +40,17 @@ ActiveRecord::Schema.define(version: 20150922191454) do
     t.datetime "updated_at",                                       null: false
     t.string   "image_url",      default: "placeholder_image.png"
   end
+
+  create_table "steps", force: :cascade do |t|
+    t.integer  "fitness_plan_id"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.string   "title"
+    t.string   "summary"
+    t.string   "date"
+  end
+
+  add_index "steps", ["fitness_plan_id"], name: "index_steps_on_fitness_plan_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "",                       null: false
@@ -66,6 +87,8 @@ ActiveRecord::Schema.define(version: 20150922191454) do
   add_index "users_races", ["race_id"], name: "index_users_races_on_race_id", using: :btree
   add_index "users_races", ["user_id"], name: "index_users_races_on_user_id", using: :btree
 
+  add_foreign_key "fitness_plans", "races"
+  add_foreign_key "steps", "fitness_plans"
   add_foreign_key "users_races", "races"
   add_foreign_key "users_races", "users"
 end

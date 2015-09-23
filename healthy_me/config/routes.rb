@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  # get 'fitness_plans/index' => 'users#index'
+
+  # get 'fitness_plans/edit' => 'users#index'
+
   devise_for :users, :controllers => { 
   	:omniauth_callbacks => "callbacks" }
 	#signout with: http://localhost:3000/logout
@@ -9,7 +13,10 @@ Rails.application.routes.draw do
   get 'users', to: 'users#index'
   get 'users/data', to: 'users#health_data'
 
-  
+  resources :races do 
+  	resources :fitness_plan, shallow: true
+  	end 
+
 end
 
 
@@ -35,3 +42,19 @@ end
 #                     root GET      /                                      users#index
 #                    users GET      /users(.:format)                       users#index
 #               users_data GET      /users/data(.:format)                  users#health_data
+#          race_plan_index GET      /races/:race_id/plan(.:format)         plan#index
+#                          POST     /races/:race_id/plan(.:format)         plan#create
+#            new_race_plan GET      /races/:race_id/plan/new(.:format)     plan#new
+#                edit_plan GET      /plan/:id/edit(.:format)               plan#edit
+#                     plan GET      /plan/:id(.:format)                    plan#show
+#                          PATCH    /plan/:id(.:format)                    plan#update
+#                          PUT      /plan/:id(.:format)                    plan#update
+#                          DELETE   /plan/:id(.:format)                    plan#destroy
+#                    races GET      /races(.:format)                       races#index
+#                          POST     /races(.:format)                       races#create
+#                 new_race GET      /races/new(.:format)                   races#new
+#                edit_race GET      /races/:id/edit(.:format)              races#edit
+#                     race GET      /races/:id(.:format)                   races#show
+#                          PATCH    /races/:id(.:format)                   races#update
+#                          PUT      /races/:id(.:format)                   races#update
+#                          DELETE   /races/:id(.:format)                   races#destroy
