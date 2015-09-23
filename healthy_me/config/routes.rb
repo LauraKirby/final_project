@@ -15,7 +15,9 @@ Rails.application.routes.draw do
 
   resources :races do 
   	resources :fitness_plan, shallow: true
-  	end 
+  end 
+
+  get '/angular', to: 'static_assets#index'
 
 end
 

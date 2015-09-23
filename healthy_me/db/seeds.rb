@@ -23,6 +23,11 @@ b2b_plan = FitnessPlan.create(plan_title: "Bay To Breakers", plan_summary: "Prep
 #create two steps
 b2b_day_1 = Step.create(title: b2b_plan_hash["two_weeks_before"][0]["day_1"]["focus"], summary: b2b_plan_hash["two_weeks_before"][0]["day_1"]["activity_description"])
 b2b_day_2 = Step.create(title: b2b_plan_hash["two_weeks_before"][1]["day_2"]["focus"], summary: b2b_plan_hash["two_weeks_before"][1]["day_2"]["activity_description"])
+b2b_day_3 = Step.create(title: b2b_plan_hash["two_weeks_before"][2]["day_3"]["focus"], summary: b2b_plan_hash["two_weeks_before"][2]["day_3"]["activity_description"])
+b2b_day_4 = Step.create(title: b2b_plan_hash["two_weeks_before"][3]["day_4"]["focus"], summary: b2b_plan_hash["two_weeks_before"][3]["day_4"]["activity_description"])
+b2b_day_5 = Step.create(title: b2b_plan_hash["two_weeks_before"][4]["day_5"]["focus"], summary: b2b_plan_hash["two_weeks_before"][4]["day_5"]["activity_description"])
+b2b_day_6 = Step.create(title: b2b_plan_hash["two_weeks_before"][5]["day_6"]["focus"], summary: b2b_plan_hash["two_weeks_before"][5]["day_6"]["activity_description"])
+b2b_day_7 = Step.create(title: b2b_plan_hash["two_weeks_before"][6]["day_7"]["focus"], summary: b2b_plan_hash["two_weeks_before"][6]["day_7"]["activity_description"])
 
 #add b2b race to user_1's races
 user_1.races << b2b
@@ -35,11 +40,15 @@ b2b.save!
 #add steps to fitness_plan
 b2b_plan.steps << b2b_day_1
 b2b_plan.steps << b2b_day_2
+b2b_plan.steps << b2b_day_3
+b2b_plan.steps << b2b_day_4
+b2b_plan.steps << b2b_day_5
+b2b_plan.steps << b2b_day_6
+b2b_plan.steps << b2b_day_7
 b2b_plan.save!
 
 #add boston race to user_2's races
 user_2.races << boston
-user_2.races << b2b
 user_2.save!
 
 

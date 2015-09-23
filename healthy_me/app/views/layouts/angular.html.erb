@@ -6,23 +6,9 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => false %>
   <%= csrf_meta_tags %>
 </head>
-<body>
-  <div class="wrapper">
-
-
-    <div id="header">
-      <%= render 'layouts/messages' %>
-    </div>
-
-    <div id="content">
-      <%= yield %>
-    </div>
-    
-    <div id="footer">
-      <%= render 'layouts/footer' %>
-    </div>
-    
-  
+<body ng-app="HealthyMe">
+  <div class="wrapper" ng-controller="ThrowAway">
+   {{testing}}
   </div> <!-- end wrapper -->
 </body>
 </html>
