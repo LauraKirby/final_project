@@ -11,10 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150923180634) do
+ActiveRecord::Schema.define(version: 20150924002625) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "completed_steps", force: :cascade do |t|
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "step_id"
+  end
+
+  add_index "completed_steps", ["step_id"], name: "index_completed_steps_on_step_id", using: :btree
+  add_index "completed_steps", ["user_id"], name: "index_completed_steps_on_user_id", using: :btree
 
   create_table "fitness_plans", force: :cascade do |t|
     t.integer  "race_id"
@@ -87,6 +97,8 @@ ActiveRecord::Schema.define(version: 20150923180634) do
   add_index "users_races", ["race_id"], name: "index_users_races_on_race_id", using: :btree
   add_index "users_races", ["user_id"], name: "index_users_races_on_user_id", using: :btree
 
+  add_foreign_key "completed_steps", "steps"
+  add_foreign_key "completed_steps", "users"
   add_foreign_key "fitness_plans", "races"
   add_foreign_key "steps", "fitness_plans"
   add_foreign_key "users_races", "races"

@@ -1,7 +1,4 @@
 Rails.application.routes.draw do
-  # get 'fitness_plans/index' => 'users#index'
-
-  # get 'fitness_plans/edit' => 'users#index'
 
   devise_for :users, :controllers => { 
   	:omniauth_callbacks => "callbacks" }

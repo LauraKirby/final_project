@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
   has_many :users_races, dependent: :destroy
   has_many :races, through: :users_races
+  has_many :completed_steps, dependent: :destroy
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
