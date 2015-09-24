@@ -36,6 +36,7 @@ class User < ActiveRecord::Base
    
     save!
     #redirect_to :users
+    
   end 
 
 end
