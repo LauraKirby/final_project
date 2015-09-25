@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   	resources :fitness_plan, shallow: true
   end 
 
-  get '/angular', to: 'static_assets#index'
+  get 'users/angular', to: 'static_assets#index'
 
 end
 

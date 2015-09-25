@@ -6,31 +6,17 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => false %>
   <%= csrf_meta_tags %>
 </head>
-<body ng-app="HealthyMe">
-  <div class="wrapper" ng-controller="UsersController">
+
+<body>
   <%= render :partial => 'layouts/nav_bar' %>
-    <div class="ui container">
-    <h1>Healthy Me</h1>
-
-    <h3>Hello {{user_name}} </h3>
-    <img src="<%= image_path(current_user.image_url)%>" alt="user image">
-
-    <p>3 ways to collect user data:</p>
-    <ul>
-      <li>connect to Fitbit account</li>  
-      <li>fill out in app form</li>
-      <li>create Fitbit account</li>
-    </ul>
-
-    <p>
-      1. <a href="http://localhost:3000/users/auth/fitbit/">Connect with <%= image_tag("fitbit_logo.png") %></a><br>Don't have a Fitbit? That's ok, head to <a href="https://www.fitbit.com/SignUp" target="blank">Fitbit.com/signup</a> to create a free account. 
-    </p>
-    <p>
-      2. <a href="users/dataform">Add data manually</a>
-    </p>
-
-    </div>
+  <div ng-app="HealthyMe">
+  {{5+5}}
+      
+  <div class="wrapper" ng-controller="UsersController">  
+        <ng-include src="'/partials/user_profile.html'"></ng-include>  
+   </div>
 
   </div> <!-- end wrapper -->
+</div>
 </body>
 </html>
