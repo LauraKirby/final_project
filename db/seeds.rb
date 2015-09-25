@@ -12,8 +12,8 @@ b2b_plan_file = File.read('data-plan-steps.json')
 b2b_step = JSON.parse(b2b_plan_file)
 
 #create two users
-user_1 = User.create(first_name: "Thomas", last_name: "The Train", password:"thomas@example.com", password_confirmation: "thomas@example.com", email:"thomas@example.com", image_url: "http://bit.ly/1MoVWkm")
-user_2 = User.create(first_name: "Olivia", last_name: "The Pig", password:"olivia@example.com", password_confirmation: "olivia@example.com", email: "olivia@example.com", image_url:"http://bit.ly/1LLPIIr")
+user_1 = User.create(first_name: "Thomas", last_name: "The Train", password:"thomas@example.com", password_confirmation: "thomas@example.com", email:"thomas@example.com", image_url: "https://bit.ly/1MoVWkm")
+user_2 = User.create(first_name: "Olivia", last_name: "The Pig", password:"olivia@example.com", password_confirmation: "olivia@example.com", email: "olivia@example.com", image_url:"https://bit.ly/1LLPIIr")
 
 #create two races
 b2b = Race.create(name: b2b_hash["name"], distance: b2b_hash["distance"], image_url:b2b_hash["image"], date: b2b_hash["date"], cost: b2b_hash["cost"])
