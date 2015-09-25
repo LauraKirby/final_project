@@ -6,8 +6,9 @@
     <!-- if current_user? add erb tags -->
       <div class="ui four item menu">
         <%= link_to "Profile", users_path(), :class=>"active item" %>
-        <%= link_to "Race", races_path(), :class=>"active item" %>
-        <a class="item">My Fitness Plan</a>
+        <%= link_to "Race", races_path(), :class=>"item"%>
+        <%= link_to "My Fitness Plan", fitness_plan_path(:id), :class=>"item"%>
+
         <a class="item">Team</a>
       </div>
     <!-- end add erb tags -->

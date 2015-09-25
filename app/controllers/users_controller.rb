@@ -18,7 +18,7 @@ before_action :authenticate_user!
 			#myArray = [email:"laurakirby26", name:"laura", city:"SF", state:"California"]
 			#myDataHash = {userdata:[{email:"laura@email", name:"laura", city:"SF", state:"California"}, {email:"america@email", name:"america", city:"LA", state:"California"},{email:"john@email", name:"john", city:"PS", state:"California"}]}
 			#why are rails erb tags working in my angular views?
-			format.html {render html:current_user, :partial => "users/show.erb"}
+			#format.html {render html:current_user, :partial => "users/show.erb"}
 			#modify current_user to only return the pieces that are relevant 
 			#can i make certain properties private in the model? 
 			format.json {render json:current_user, :partial => "users/show.json"}
