@@ -3,21 +3,21 @@
 #
 #when adding a user with devise you must add email, password & password_confirmation
 
-#Parse race JSON into Ruby hash
-b2b_file = File.read('data-bay-to-breakers.json')
-b2b_hash = JSON.parse(b2b_file)
+#create two users
+user_1 = User.create(first_name: "Thomas", last_name: "The Train", password:"thomas@example.com", password_confirmation: "thomas@example.com", email:"thomas@example.com", image_url: "https://bit.ly/1MoVWkm")
+user_2 = User.create(first_name: "Olivia", last_name: "The Pig", password:"olivia@example.com", password_confirmation: "olivia@example.com", email: "olivia@example.com", image_url:"https://bit.ly/1LLPIIr")
+
+#Parse races JSON into Ruby hash
+races_file = File.read('data-races.json')
+races_hash = JSON.parse(races_file)
 
 #Parse steps JSON into Ruby hash
 b2b_plan_file = File.read('data-plan-steps.json')
 b2b_step = JSON.parse(b2b_plan_file)
 
-#create two users
-user_1 = User.create(first_name: "Thomas", last_name: "The Train", password:"thomas@example.com", password_confirmation: "thomas@example.com", email:"thomas@example.com", image_url: "https://bit.ly/1MoVWkm")
-user_2 = User.create(first_name: "Olivia", last_name: "The Pig", password:"olivia@example.com", password_confirmation: "olivia@example.com", email: "olivia@example.com", image_url:"https://bit.ly/1LLPIIr")
-
 #create two races
-b2b = Race.create(name: b2b_hash["name"], distance: b2b_hash["distance"], image_url:b2b_hash["image"], date: b2b_hash["date"], cost: b2b_hash["cost"])
-boston = Race.create(name: "Boston Marathon", distance: "26 miles", image_url:"http://bit.ly/1OOXsyT", date: "04/15/2016", cost: 175)
+b2b = Race.create(name: races_hash["races"][0]["name"], distance: races_hash["races"][0]["distance"], image_url:races_hash["races"][0]["image"], date: races_hash["races"][0]["date"], cost: races_hash["races"][0]["cost"])
+boston = Race.create(name: races_hash["races"][1]["name"], distance: races_hash["races"][1]["distance"], image_url:races_hash["races"][1]["image"], date: races_hash["races"][1]["date"], cost: races_hash["races"][1]["cost"])
 
 #create a fitness plan
 b2b_plan = FitnessPlan.create(plan_title: "Bay To Breakers", plan_summary: "Preparing for a 15k is fun! We have outlined a few steps that will help you prepare for race day")

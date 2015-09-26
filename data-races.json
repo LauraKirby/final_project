@@ -1,0 +1,7 @@
+{"races":
+[
+{"name":"Bay to Breakers","about":"The Bay to Breakers 12K race starts near the clock tower at The Embarcadero, which runs along the San Francisco “Bay”. The race runs west through the city and finishes at the Great Highway where “breakers” crash onto the Pacific Coast's Ocean Beach. Join San Fransicans to celebrate community, art and healthy competition. Participants run up the iconic Hayes Street Hill, along the Panhandle and through Golden Gate Park, while the city of San Francisco cheers them on.", "distance": "12K", "age":"103 years","start":"Embarcadero","end":"Ocean Beach",
+"cost":59,"image":"http://bit.ly/1OsU11r","date":"05/15/2016","average_grade": "5.5%","steepest_grade":"11%", "transportation":"There are muni busses at the end of the race, you can use your clipper card or purchase a muni ticket beforehand. Additionally, there will be private chartered bus services will be provided by Bauer’s Intelligent Transportation. Cost unknown.","thumbnail":"http://localhost:3000/fitbit_logo.png"},
+{"name":"Boston Marathon","about":"Occurs in Boston", "distance": "26mi", "age":"118 years","start":"Main Street","end":"Boylston Street", "cost":175,"image":"http://bit.ly/1KA9vwM","date":"04/18/2016","average_grade": "450ft above sea level","steepest_grade":"11%", "transportation":"The recommended way to get to the start in Hopkinton on race morning is by using the official B.A.A. buses between 6:00 a.m. and 9:33 a.m.","thumbnail":"http://localhost:3000/fitbit_logo.png"}
+]
+}

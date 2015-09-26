@@ -15,6 +15,8 @@ Rails.application.routes.draw do
   end 
 
   get 'users/angular', to: 'static_assets#index'
+  get 'race', to: 'races#show'
+  get 'races', to: 'races#index'
 
 end
 
