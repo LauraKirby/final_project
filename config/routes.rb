@@ -15,7 +15,9 @@ Rails.application.routes.draw do
   end 
 
   get 'users/angular', to: 'static_assets#index'
-  get 'race', to: 'races#show'
+  #implement id's through route params
+  get 'race_b2b', to: 'races#about_b2b'
+  get 'race_boston', to: 'races#about_boston'
   get 'races', to: 'races#index'
 
 end

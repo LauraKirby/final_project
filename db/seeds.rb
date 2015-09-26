@@ -16,8 +16,8 @@ b2b_plan_file = File.read('data-plan-steps.json')
 b2b_step = JSON.parse(b2b_plan_file)
 
 #create two races
-b2b = Race.create(name: races_hash["races"][0]["name"], distance: races_hash["races"][0]["distance"], image_url:races_hash["races"][0]["image"], date: races_hash["races"][0]["date"], cost: races_hash["races"][0]["cost"])
-boston = Race.create(name: races_hash["races"][1]["name"], distance: races_hash["races"][1]["distance"], image_url:races_hash["races"][1]["image"], date: races_hash["races"][1]["date"], cost: races_hash["races"][1]["cost"])
+b2b = Race.create(name: races_hash["races"][0]["name"], distance: races_hash["races"][0]["distance"], image_url:races_hash["races"][0]["image"], date: races_hash["races"][0]["date"], cost: races_hash["races"][0]["cost"], about_url:races_hash["races"][0]["about_url"], about:races_hash["races"][0]["about"])
+boston = Race.create(name: races_hash["races"][1]["name"], distance: races_hash["races"][1]["distance"], image_url:races_hash["races"][1]["image"], date: races_hash["races"][1]["date"], cost: races_hash["races"][1]["cost"], about_url:races_hash["races"][1]["about_url"], about:races_hash["races"][1]["about"])
 
 #create a fitness plan
 b2b_plan = FitnessPlan.create(plan_title: "Bay To Breakers", plan_summary: "Preparing for a 15k is fun! We have outlined a few steps that will help you prepare for race day")
