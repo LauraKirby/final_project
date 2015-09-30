@@ -23,10 +23,16 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 # Debugging tool
 gem 'pry-rails'
+
 # Devise for login, OAuth with Facebook & Fitbit
 gem 'devise'
 gem 'omniauth-facebook'
 gem 'omniauth-fitbit'
+
+# add token auth for ios token auth, must use version 1.8
+gem 'simple_token_authentication', '1.8'
+gem 'devise-ios-rails'
+
 # Use Fitbit API
 gem 'fitgem'
 # Use Semantic-UI for styling

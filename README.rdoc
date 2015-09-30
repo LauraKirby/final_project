@@ -26,3 +26,7 @@ A web application that provides health suggestions to people who are about to ru
 	**APP_ID and APP_SECRET refer to Facebook application identifiers. To obtain these numeric values, you will need to go to Facebook's developer page to register a new app. 
 
 * To do: create and write instruction on how to run the test suite  
+
+* Set up Token Auth for iOS and Rails  
+Required Gems: Devise, Simple Token Auth 1.8 (1.10 breaks, see gem file for syntax), Devise iOS Rails
+https://github.com/netguru/devise-ios-rails

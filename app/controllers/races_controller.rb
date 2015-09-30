@@ -1,6 +1,5 @@
 class RacesController < ApplicationController
 
-
 	def index 
 		races = File.read('data-races.json')
 			respond_to do |format|

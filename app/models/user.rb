@@ -3,11 +3,15 @@ class User < ActiveRecord::Base
   has_many :races, through: :users_races
   has_many :completed_steps, dependent: :destroy
 
+  #set up for token auth with Facebook
+  acts_as_token_authenticatable
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, 
          :validatable, :omniauthable
+  
+  include DeviseIosRails::OAuth
 
   def self.from_omniauth(auth)  
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|

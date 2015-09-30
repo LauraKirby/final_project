@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
 #before action to check for authenticated user
 before_action :authenticate_user!
+acts_as_token_authentication_handler_for User
 
 	def index
 		#if user is authenticated, render this page
@@ -26,6 +27,8 @@ before_action :authenticate_user!
 			p current_user
 		end 
 	end
+
+
 
 end #end UsersController
 
