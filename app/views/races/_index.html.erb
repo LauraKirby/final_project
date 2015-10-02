@@ -1,0 +1,18 @@
+<%= javascript_include_tag "application" %>
+<%= stylesheet_link_tag "application", media:"all" %>
+<%= render :partial => 'layouts/nav_bar' %>
+
+<h1>Index of all races available for a user to run.</h1>
+
+<h2>Select a Race</h2>
+
+
+
+<% @races.each do |race| %>
+<li><%= race.name %></li>
+
+<% end %>
+
+<div ng-app="HealthyMe">
+	<div ng-include="'/partials/race_profile.html'"></div>
+</div>

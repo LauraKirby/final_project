@@ -19,7 +19,7 @@ Rails.application.routes.draw do
   #implement id's through route params
   get 'race_b2b', to: 'races#about_b2b'
   get 'race_boston', to: 'races#about_boston'
-  get 'races', to: 'races#index'
+  get 'races/angular', to: 'static_assets#race'
 
 end
 

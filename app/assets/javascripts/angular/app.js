@@ -10,4 +10,10 @@ app.config(['$httpProvider', '$routeProvider', function($httpProvider, $routePro
   		templateUrl: '/partials/user_profile.html', 
   		controller: 'controller.js'
   	});
+
+  $routeProvider
+  	.when('/races/angular', {
+  		templateUrl: '/partials/race_profile.html', 
+  		controller: 'controller.js'
+  	});
 }]);

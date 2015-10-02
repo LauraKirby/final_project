@@ -1,0 +1,11 @@
+<%= javascript_include_tag "application" %>
+<%= stylesheet_link_tag "application", media:"all" %>
+<%= render :partial => 'layouts/nav_bar' %>
+
+<h1>User Index</h1>
+<p>users/_show.erb</p>
+<%= current_user.email %>
+
+<div ng-app="HealthyMe">
+<div ng-include="'/partials/user_profile.html'"></div>
+</div>

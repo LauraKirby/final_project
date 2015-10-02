@@ -1,9 +1,11 @@
 class RacesController < ApplicationController
 
 	def index 
-		races = File.read('data-races.json')
+		races_json = File.read('data-races.json')
+		@races = Race.all
 			respond_to do |format|
-				format.json {render json:races, :partial => "races/b2b.json"}
+				format.json {render json:races_json, :partial => "races/_b2b.json.erb"}
+				format.html {render html:current_user, :partial => "races/index.html.erb"}
 			end 
 	end 
 
