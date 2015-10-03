@@ -1,0 +1,37 @@
+
+
+<h1>Angular Partial - races</h1>
+
+<!-- <div ng-controller="NavBarController">
+<ng-include src="'/partials/nav_bar.html'"></ng-include> 
+</div> -->
+<div ng-controller="RaceController">
+  
+
+<div class="ui grid">
+	<div class="one wide column"></div>
+  <div class="fifteen wide column">
+  	<h2>One Race</h2>
+  	<p>Show one race based on the one race a user selected.</p>
+  </div>
+
+  <div class="two wide column"></div>
+  	<div ng-repeat="race in races_data">
+  		<div class="four wide column">
+  				<p>{{race.name}}</p>
+  				<p>{{race.distance}}</p>
+  				<p>{{race.date}}</p>
+  				<p>{{race.cost | currency}}</p>
+  				<img class="ui image medium" ng-src="{{race.image}}" alt="race image">
+  		</div>
+  	</div>
+
+  <div class="six wide column"></div>
+
+
+  	<div class="one wide column"></div>
+    <div class="fifteen wide column"></div>
+
+</div> <!-- ui grid -->
+
+</div> <!-- RaceController -->

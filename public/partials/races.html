@@ -1,0 +1,34 @@
+
+<p>Angular Partial - races</p>
+
+<!-- <div ng-controller="NavBarController">
+<ng-include src="'/partials/nav_bar.html'"></ng-include> 
+</div> -->
+<h2>if user.races.current_race != nil then hide this races.html partial</h2>
+<div ng-controller="RaceController">
+
+<div class="ui grid">
+	<div class="one wide column"></div>
+  <div class="fifteen wide column">
+  	<h2>Select a Race</h2>
+  </div>
+
+  <div class="two wide column"></div>
+  	<div ng-repeat="race in races_data">
+  		<div class="four wide column">
+  				<a href="">
+            <img class="ui rounded medium image" ng-src="{{race.image}}" alt="race image">
+            <p>{{race.name}}</p>
+          </a>
+          <button class="ui button" ng-click="selectRace()">Select</button>
+  		</div>
+  	</div>
+
+  <div class="six wide column"></div>
+
+  	<div class="one wide column"></div>
+    <div class="fifteen wide column"></div>
+
+</div> <!-- ui grid -->
+
+</div> <!-- RaceController -->

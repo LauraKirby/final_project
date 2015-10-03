@@ -1,11 +1,14 @@
-<h1>{{b2b_name}}</h1>
+<div ng-controller="RaceController">
+<h1>{{races_data[user.current_race].name}}</h1>
 
-<img src="{{b2b_image}}" alt="bay to breakers image">
-
-<p>Distance of race: {{b2b_distance}}</p>
-
-<p>Date of race: {{b2b_date}}</p>
-
-<p>Cost: {{b2b_cost | currency}}</p>
+<img class="ui image medium" ng-src="{{races_data[current_race].image}}" alt="race image">
 
 
+<p>Distance of race: {{races_data[current_race].distance}}</p>
+
+<p>Date of race: {{races_data[current_race].date}}</p>
+
+<p>Cost: {{races_data[current_race].cost | currency}}</p>
+
+
+</div>

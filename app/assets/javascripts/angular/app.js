@@ -6,14 +6,22 @@ app.config(['$httpProvider', '$routeProvider', function($httpProvider, $routePro
     $('meta[name=csrf-token]').attr('content');
 
   $routeProvider
-  	.when('/users/angular', {
-  		templateUrl: '/partials/user_profile.html', 
-  		controller: 'controller.js'
-  	});
+    .when('/', {
+      templateUrl: '/partials/user_profile.html', 
+      controller: 'ProfileController'
+    })
+    // .when('/races', {
+    //   templateUrl: '/partials/races.html', 
+    //   controller: 'RaceController'
+    // })
+    .when('/race', {
+      templateUrl: '/partials/race_profile.html', 
+      controller: 'RaceController'
+    })
+    .when('/plan', {
+      templateUrl: '/partials/fitness_plan.html', 
+      controller: 'PlanController'
+    });
 
-  $routeProvider
-  	.when('/races/angular', {
-  		templateUrl: '/partials/race_profile.html', 
-  		controller: 'controller.js'
-  	});
+
 }]);

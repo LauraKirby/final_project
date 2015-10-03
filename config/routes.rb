@@ -9,13 +9,21 @@ Rails.application.routes.draw do
 	end
 	root to: "users#index"
   get 'users', to: 'users#index'
+
+  #all data for one user
   get 'users/data', to: 'users#health_data'
+
+  #all data for races
+  get '/races', to: 'races#index'
+
+  get '/angular', to: 'static_assets#index'
 
   resources :races do 
   	resources :fitness_plan, shallow: true
   end 
 
   get 'users/angular', to: 'static_assets#index'
+  
   #implement id's through route params
   get 'race_b2b', to: 'races#about_b2b'
   get 'race_boston', to: 'races#about_boston'

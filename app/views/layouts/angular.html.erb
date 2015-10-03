@@ -10,9 +10,16 @@
 <body>
   <div class="wrapper">
 
-  <%= render :partial => 'layouts/nav_bar' %>
-  
+  <h1>THIS IS THE RAILS "/angular" ROUTE</h1>
+
+  <!-- angualr views here? -->
   <div ng-app="HealthyMe">
+    <ng-view></ng-view>
+  </div> <!-- ng-app="HealthyMe" -->
+
+  
+  <!-- angualr views here? -->
+  <!-- <div ng-app="HealthyMe">
   {{5+5}}
       
   <div ng-controller="UsersController">  
@@ -20,20 +27,12 @@
         
   </div>
 
-  <div ng-controller="RacesController">
-    <ng-include src="'/partials/race_profile.html'"></ng-include> 
+  <div ng-controller="RacesController">  
+    <ng-include src="'/partials/races.html'"></ng-include> 
+        
+  </div>
 
-  </div
-
-
-         
-
-
-   
-
-
-
-  </div> <!-- ng-app="HealthyMe" -->
+  </div>  --><!-- ng-app="HealthyMe" -->
   
 </div> <!-- end wrapper -->
 </body>
