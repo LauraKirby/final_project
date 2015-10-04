@@ -17,18 +17,23 @@ app.controller("UsersController", ["$scope", "$http", "$location", function($sco
 app.controller("RaceController", ["$scope", "$http", function($scope, $http) {
     $scope.selectRace;
     $scope.currentRace; 
-    $scope.today = Date.now(); 
-   // $scope.daysUntilRace = today - $scope.races_data[0].date;
-    $scope.racesCompleted = 0; 
+    $scope.racesCompleted = 2; 
+    //$scope.today = new Date.now(); 
     $http.get('/races.json').then(function(data){
         $scope.races_data = data.data.races;
         $scope.race_name = $scope.races_data[0].name;
         // $scope.selectRace = function(){
         //     $scope.current_race = 0;
         // };
+        $scope.raceDate = new Date($scope.races_data[0].dateWeb);
         $scope.current_race = 0;
+        $scope.today = new Date(); 
+        daysUntilRace = ($scope.today.getTime() - $scope.raceDate.getTime());
+        msPerDay = 24 * 60 * 60 * 1000 ;
+        race_daysLeft = daysUntilRace / msPerDay;
+        $scope.daysLeft = Math.floor(race_daysLeft);
+        console.log($scope.daysLeft);
     });
-    console.log($scope.selectRace);
 }]);
 
 app.controller("ProfileController", ["$scope", "$http", function($scope, $http) {
