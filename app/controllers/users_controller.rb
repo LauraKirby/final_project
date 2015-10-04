@@ -4,6 +4,14 @@ before_action :authenticate_user!
 acts_as_token_authentication_handler_for User
 
 	def index
+		if current_user
+			render 'layouts/angular', layout: false
+		else 
+			render 'layouts/healthy_homepage', layout: false
+		end 
+	end 
+
+	def user_data
 		# respond_to do |format|
 		# 	format.json {render json:current_user}
 		# 	format.html {render html:current_user, :partial => "users/show.erb"}

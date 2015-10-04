@@ -17,11 +17,12 @@ app.controller("UsersController", ["$scope", "$http", "$location", function($sco
 app.controller("RaceController", ["$scope", "$http", function($scope, $http) {
     $http.get('/races.json').then(function(data){
         $scope.races_data = data.data.races;
-        $scope.race_name = $scope.races[0].name;
+        $scope.race_name = $scope.races_data[0].name;
         // $scope.selectRace = function(){
         //     $scope.current_race = 0;
         // };
-        // $scope.current_race = 0;
+        $scope.current_race = 0;
+        $scope.name = "laura";
    });
 }]);
 

@@ -7,7 +7,7 @@ app.config(['$httpProvider', '$routeProvider', function($httpProvider, $routePro
 
   $routeProvider
     .when('/', {
-      templateUrl: '/partials/user_profile.html', 
+      templateUrl: '/partials/user_show.html', 
       controller: 'ProfileController'
     })
     // .when('/races', {
@@ -15,12 +15,15 @@ app.config(['$httpProvider', '$routeProvider', function($httpProvider, $routePro
     //   controller: 'RaceController'
     // })
     .when('/race', {
-      templateUrl: '/partials/race_profile.html', 
+      templateUrl: '/partials/race_show.html', 
       controller: 'RaceController'
     })
     .when('/plan', {
-      templateUrl: '/partials/fitness_plan.html', 
+      templateUrl: '/partials/plan_show.html', 
       controller: 'PlanController'
+    })
+    .when('/team',{
+      templateUrl: '/partials/team_show.html', 
     });
 
 

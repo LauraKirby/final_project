@@ -1,0 +1,35 @@
+<ng-include src="'/partials/nav_bar.html'"></ng-include>
+<h2>Race Show - Angular Partial</h2>
+<p>Angular Test: {{5+5}}</p>
+
+<div ng-controller="RaceController">
+  
+
+<div class="ui grid">
+
+  <div class="one wide column"></div>
+
+  <div class="four wide column">
+    <h1>{{races_data[current_race].name}}</h1>
+    <img class="ui image medium" ng-src="{{races_data[current_race].image}}" alt="race image">
+    <p>Distance of race: {{races_data[current_race].distance}}</p>
+    <p>Date of race: {{races_data[current_race].date}}</p>
+    <p>Cost: {{races_data[current_race].cost | currency}}</p>
+  </div>
+
+  <div class="one wide column"></div>
+  <div class="nine wide column">
+    <p>Show one race based on the one race a user selected.</p>
+    <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+  </div>
+  <div class="one wide column"></div>
+
+
+
+
+    <div class="one wide column"></div>
+    <div class="fifteen wide column"></div>
+
+</div> <!-- ui grid -->
+
+</div> <!-- RaceController -->

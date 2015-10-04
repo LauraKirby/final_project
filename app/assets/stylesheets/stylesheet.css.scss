@@ -1,3 +1,79 @@
+@font-face {
+     font-family: Thonburi-Bold;
+     src: url('pathway/Thonburi-Bold.otf'); 
+}
+
+// ----------------- General ----------------- 
+
+html, body {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+body {
+  font-family: Helvetica Neue,Helvetica,Arial,sans-serif; 
+}
+
+body > .grid {
+ height: 100%;
+}
+
+h1 {
+  font-family: 'Helvetica Neue';
+  font-size: 24px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 400;
+  line-height: 26.4px;
+}
+
+h2{
+  font-family: "HelveticaNeue-Light";
+  font-size: 24px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 400;
+  line-height: 26.4px; 
+}
+
+h3 {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 500;
+  line-height: 15.4px;
+}
+
+p {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+.main.container {
+  margin-top: 7em;
+}
+
+.ui.container {
+  padding-top: 5em;
+  padding-bottom: 5em;
+}
+
+.bodyText {
+  font-family: 'HelveticaNeue=Light', 'Helevtica Neue Light';
+  font-size: 120%;
+}
+
+.field {
+  padding-bottom: 1%;
+  padding-top: 1%;
+  font-family: Helvetica Neue,Helvetica,Arial,sans-serif; 
+}
+
 .alert-error {
     background-color: #f2dede;
     border-color: #eed3d7;
@@ -38,10 +114,90 @@
   text-align: center;
 }
 
-.helloUserText {
-  
+.ui.menu .item img.logo {
+  margin-right: 1.5em;
+}
+
+.wireframe {
+  margin-top: 2em;
+}
+.ui.footer.segment {
+  margin: 5em 0em 0em;
+  padding: 5em 0em;
+}
+
+// ----------------- User Show ----------------- 
+.welcomeText {
+  align: center; 
+  display: inline-block;
+}
+
+.aboutTextDiv{
+  margin-top:5%;
+  font-family: Helvetica Neue,Helvetica,Arial,sans-serif; 
 }
 
 .profileImage {
-  display: inline-block
+  display: inline-block;
+  width: 20%;
+  float: left;
+  display: inline-block;
 }
+
+.ui.section.divider {
+  margin-top: 2%; 
+  margin-bottom: 2%; 
+}
+.zeroColMargin {
+  font-family: Helvetica Neue,Helvetica,Arial,sans-serif; 
+  background-color: #5DFDCB;
+  padding: 2% 2%;
+}
+.oneColMargin {
+  font-family: Helvetica Neue,Helvetica,Arial,sans-serif; 
+  background-color: #90D7FF;
+  padding: 4% 4%;
+}
+.twoColMargin {
+  background-color: #C9F9FF;
+  padding: 4% 4%;
+}
+.threeColMargin {
+  background-color: #BFD0E0;
+  padding: 4% 4%;
+}
+.fourColMargin {
+  background-color: #B8B3BE;
+  padding: 4% 4%;
+}
+.racesColMargin{
+  padding: 4% 4%;
+}
+
+.navColMargin {
+  padding: 2% 2%;
+  color: #C9F9FF;
+}
+.ui.small.image.fit {
+  max-width: 20%;
+  align: right;
+  display: inline-block;
+}
+
+.ui.grid.connectFit {
+
+}
+// ----------------- Race Index ----------------- 
+
+.ui.container.races {
+  padding-left: 15%;
+  padding-right: 15%;
+}
+
+.raceTd {
+  font-family: Helvetica Neue,Helvetica,Arial,sans-serif; 
+  margin: 10% 10%;
+}
+
+// ----------------- Race Show ----------------- 
+
