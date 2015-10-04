@@ -1,29 +1,12 @@
-<!-- <div ng-controller="NavBarController">
-<ng-include src="'/partials/nav_bar.html'"></ng-include> 
-</div> -->
-<div class="threeColMargin">
-<h2>if user.races.current_race != nil then hide this races.html partial</h2>
-<div class="ui container races">
+<!-- dropdown -->
 <div ng-controller="RaceController">
-
-
-    <table class="ui striped bottom attached table">
-              <thead>
-                <tr>
-                  <th><h2 class="ui center aligned header">Select a Race</h2></th>
-                </tr>
-              </thead>
-              <tbody>
-               <tr ng-repeat="race in races_data">
-                <td class="raceTd">
-                  <h3>{{race.name}}</h3>
-                  {{race.date}}
-                  <img class="ui centered rounded medium image" ng-src="{{race.image}}" alt="race image">
-                  <button class="ui right floated button" ng-click="selectRace()">Select</button>
-                  </td>
-               </tr>
-              </tbody>
-    </table>
-</div> <!-- RaceController -->
-</div>
-</div>
+  <div class="aligned right zeroColMargin">
+    <div class="ui huge inverted violet menu">
+      <div class="menu">
+          <select id="sel" class="item" ng-model="selectRace" ng-options="race.name as race.name for race in races_data">    
+            <option value="">Select Race</option>
+          </select>
+        </div>
+      </div>
+    </div>
+<div>

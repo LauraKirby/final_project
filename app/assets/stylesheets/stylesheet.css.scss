@@ -11,7 +11,7 @@ html, body {
   margin: 0;
 }
 body {
-  font-family: Helvetica Neue,Helvetica,Arial,sans-serif; 
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light";
 }
 
 body > .grid {
@@ -19,7 +19,7 @@ body > .grid {
 }
 
 h1 {
-  font-family: 'Helvetica Neue';
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light";
   font-size: 24px;
   font-style: normal;
   font-variant: normal;
@@ -28,7 +28,7 @@ h1 {
 }
 
 h2{
-  font-family: "HelveticaNeue-Light";
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light";
   font-size: 24px;
   font-style: normal;
   font-variant: normal;
@@ -138,7 +138,6 @@ p {
 }
 
 .profileImage {
-  display: inline-block;
   width: 20%;
   float: left;
   display: inline-block;
@@ -187,6 +186,27 @@ p {
 .ui.grid.connectFit {
 
 }
+
+.dropDown {
+  padding-left: 5%;
+}
+
+.fourColMarginFit {
+  background-color: #B8B3BE;
+  margin-top: 15%;
+  padding-top: 15%;
+}
+
+.ui.header.races {
+  padding: 2% 2%;
+}
+
+.ui.compact.menu{
+  display: inline-block;
+  width: auto;
+  float:right
+}
+
 // ----------------- Race Index ----------------- 
 
 .ui.container.races {
@@ -194,9 +214,10 @@ p {
   padding-right: 15%;
 }
 
-.raceTd {
-  font-family: Helvetica Neue,Helvetica,Arial,sans-serif; 
-  margin: 10% 10%;
+.select {
+  width: 20%;
+  float: left;
+  display: inline-block;
 }
 
 // ----------------- Race Show ----------------- 

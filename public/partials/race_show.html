@@ -1,8 +1,7 @@
 <ng-include src="'/partials/nav_bar.html'"></ng-include>
-<h2>Race Show - Angular Partial</h2>
-<p>Angular Test: {{5+5}}</p>
-
 <div ng-controller="RaceController">
+  
+<div class="ui container">
   
 
 <div class="ui grid">
@@ -11,7 +10,7 @@
 
   <div class="four wide column">
     <h1>{{races_data[current_race].name}}</h1>
-    <img class="ui image medium" ng-src="{{races_data[current_race].image}}" alt="race image">
+    <img class="ui rounded image medium" ng-src="{{races_data[current_race].image}}" alt="race image">
     <p>Distance of race: {{races_data[current_race].distance}}</p>
     <p>Date of race: {{races_data[current_race].date}}</p>
     <p>Cost: {{races_data[current_race].cost | currency}}</p>
@@ -33,3 +32,4 @@
 </div> <!-- ui grid -->
 
 </div> <!-- RaceController -->
+</div>
