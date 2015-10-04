@@ -16,6 +16,10 @@ app.controller("UsersController", ["$scope", "$http", "$location", function($sco
 
 app.controller("RaceController", ["$scope", "$http", function($scope, $http) {
     $scope.selectRace;
+    $scope.currentRace; 
+    $scope.today = Date.now(); 
+   // $scope.daysUntilRace = today - $scope.races_data[0].date;
+    $scope.racesCompleted = 0; 
     $http.get('/races.json').then(function(data){
         $scope.races_data = data.data.races;
         $scope.race_name = $scope.races_data[0].name;
@@ -24,7 +28,6 @@ app.controller("RaceController", ["$scope", "$http", function($scope, $http) {
         // };
         $scope.current_race = 0;
     });
-    $scope.name = "laura";
     console.log($scope.selectRace);
 }]);
 
