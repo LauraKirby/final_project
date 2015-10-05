@@ -10,10 +10,6 @@ app.config(['$httpProvider', '$routeProvider', function($httpProvider, $routePro
       templateUrl: '/partials/user_show.html', 
       controller: 'ProfileController'
     })
-    // .when('/races', {
-    //   templateUrl: '/partials/races.html', 
-    //   controller: 'RaceController'
-    // })
     .when('/race', {
       templateUrl: '/partials/race_show.html', 
       controller: 'RaceController'

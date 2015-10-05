@@ -16,8 +16,11 @@ app.controller("UsersController", ["$scope", "$http", "$location", function($sco
     	$scope.user_email = $scope.user_data.email;
     	$scope.user_name = $scope.user_data.first_name; 
     	$scope.user_image = $scope.user_data.image_url;
-        $scope.user_image = $scope.user_data.races;
+        $scope.user_races = $scope.user_data.races;
+        $scope.about_fitness = $scope.user_data.races[0].fitness_plan;
+        console.log($scope.about_fitness);
     });
+
 }]);
 
 app.controller("RaceController", ["$scope", "$http", function($scope, $http) {
@@ -56,12 +59,11 @@ app.controller("ProfileController", ["$scope", "$http", function($scope, $http) 
 
 
 app.controller("PlanController", ["$scope", "$http", function($scope, $http) {
-    $http.get('/plan.json').then(function(data){
-
+    $http.get('users/plan.json').then(function(data){
+        $scope.steps_data = data.data;
+        $scope.general = $scope.steps_data.two_weeks_before[0].day_1.focus;
+        // $scope.weekOne = $scope.steps_data.two_weeks_before;
+        // console.log($scope.weekOne);
     });
-}]);
-
-app.controller("HomeController", ["$scope", function($scope){
-    $scope.name = "LAURA!";
 }]);
 
