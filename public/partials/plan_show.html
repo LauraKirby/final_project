@@ -1,70 +1,67 @@
 <ng-include src="'/partials/nav_bar.html'"></ng-include>
 
+
 <div class="ui container">
 
-
-
-  <div class="ui top attached segment">Today's Plan</div>
-  <div class="ui attached segment">{{general}}</div>
-  <div class="ui attached segment">
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+<div class="ui grid">
+  <div class="four wide column">
+    <img class="ui medium image" ng-src="/images/sun.png" alt="">
   </div>
+  
+  <div class="ten wide column">
+    
+  
+  <div class="ui top attached pink segment header"><h3>Today's Plan</h3></div>
 
-  <table class="ui bottom attached table">
-    <thead>
-      <th>Activity</th>
-      <th>Level</th>
-      <th>Completed</th>
-    </thead>
+  <table class="ui bottom attached striped table">
     <tbody>
       <tr>
-        <td>Cell</td>
-        <td>Cell</td>
-        <td>Cell</td>
+        <td>Focus: </td>
+        <td>{{two_weeks_before[0].focus}}</td>
       </tr>
       <tr>
-        <td>Cell</td>
-        <td>Cell</td>
-        <td>Cell</td>
+        <td>Activity: </td>
+        <td>{{two_weeks_before[0].activity}}</td>
       </tr>
       <tr>
-        <td>Cell</td>
-        <td>Cell</td>
-        <td>Cell</td>
+        <td>Completed: </td>
+        <td>
+          <div class="ui radio checkbox">
+            <input type="radio" name="radio" checked="checked">
+            <label></label>
+          </div>
+        </td>
       </tr>
     </tbody>
   </table>
 
-<div class="ui section divider"></div>
+<div class="zeroColMargin"></div>
+<div class="zeroColMargin"></div>
 
 
- <div class="ui top attached segment">Fitness Plan Overview</div>
-  <div class="ui attached segment">
-  </div>
+ <div class="ui top attached blue segment header"><h3>Fitness Plan Summary</h3></div>
 
-  <table class="ui bottom attached table">
+  <table class="ui bottom attached striped table">
     <thead>
-      <th>Activity</th>
+      <th>Date</th>
+      <th>Focus</th>
       <th>Level</th>
       <th>Completed</th>
     </thead>
     <tbody>
-      <tr>
-        <td>Cell</td>
-        <td>Cell</td>
-        <td>Cell</td>
-      </tr>
-      <tr>
-        <td>Cell</td>
-        <td>Cell</td>
-        <td>Cell</td>
-      </tr>
-      <tr>
-        <td>Cell</td>
-        <td>Cell</td>
-        <td>Cell</td>
+      <tr ng-repeat="day in two_weeks_before">
+        <td>Day {{day.day}}</td>
+        <td>{{day.focus}}</td>
+        <td>{{day.difficulty}}</td>
+        <td>
+          <div class="ui radio checkbox">
+            <input type="radio" name="radio" checked="checked">
+            <label></label>
+          </div>
+        </td>
       </tr>
     </tbody>
   </table>
-
+</div>
+</div>
 </div> <!-- end container -->

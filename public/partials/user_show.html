@@ -4,40 +4,45 @@
 
 <div class="ui container">
 
-  <div class="oneColMarginProfile">
+
   
 <div ng-controller="RaceController">
+  <div class="ui top attached">
+    <h1 class="ui header">Welcome {{user_name}}</h1>
+    <div class="ui section divider"></div>  
+  </div>
+  <div class="oneColMarginProfile">
   <div class="ui vertical stripe segment">
     <div class="ui middle aligned stackable grid container">
       <div class="row">
         <div class="eight wide column">
-          <h2 class="ui header">Welcome {{user_name}}</h2>
-          <div class="ui section divider"></div>
-          <p><img class="ui circular small image profileImage" ng-src="{{user_image}}" alt="user image"></p>
+          <p><img class="ui circular medium bordered image" ng-src="{{user_image}}" alt="user image"></p>
         </div>
         <div class="six wide right floated column">
           <div class="right aligned fourColMarginFit">
-            <a ng-click="connectToFitbit()"class="ui huge orange button">Connect with<img class="ui small image fit" ng-src="/images/fitbit_logo.png" alt="fitbit bordered image"></a>
-              <div class="aligned right zeroColMargin">
-                <div class="ui huge inverted violet menu">
+            <a ng-click="connectToFitbit()"class="ui huge orange basic button">Connect with<img class="ui small image fit" ng-src="/images/fitbit_logo.png" alt="fitbit bordered image"></a>
+              <div class="aligned right zeroColMarginRaces">
+                <div class="ui huge violet basic menu">
                   <div class="menu">
                     <select id="sel" class="item" ng-model="selectRace" ng-options="race.name as race.name for race in races_data">    
                        <option value="">Select Race</option>
                     </select>
                   </div>
-                 </div>
+                </div>
               </div>
            </div>
          </div>
-      </div>
+      </div> <!-- end row -->
     </div>
   </div>
+</div>
+
 
   <div class="twoColMargin">
-    <div class="ui top attached message">
+    <div class="ui top attached purple segment header">
       <h3>My Summary</h3> Today's Date:  {{today | date:'fullDate'}}
     </div>
-    <table class="ui attached table">
+    <table class="ui attached striped table">
       <tbody>
         <tr>
           <td>Current Race</td>

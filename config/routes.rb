@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   get '/races', to: 'races#index'
 
   get 'users/plan', to: 'fitness_plans#index'
+  get 'users/plansummary', to: 'fitness_plans#summary'
 
   resources :races do 
   	resources :fitness_plan, shallow: true

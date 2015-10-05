@@ -20,6 +20,11 @@ class FitnessPlansController < ApplicationController
       render json: steps_json, status: :created
   end
 
+  def summary 
+    steps_json = File.read('data-plan-summary.json')
+    render json: steps_json, status: :created
+  end 
+
   def edit
   end
 

@@ -126,10 +126,49 @@ p {
   padding: 5em 0em;
 }
 
+.zeroColMargin {
+  font-family: Helvetica Neue,Helvetica,Arial,sans-serif; 
+  background-color: #FFFFFF;
+  padding: 2% 2%;
+}
+.oneColMargin {
+  font-family: Helvetica Neue,Helvetica,Arial,sans-serif; 
+  background-color: #FFFFFF;
+  padding: 4% 4%;
+}
+.twoColMargin {
+  background-color: #FFFFFF;
+  padding: 4% 4%;
+}
+.threeColMargin {
+  background-color: #FFFFFF;
+  padding: 4% 4%;
+}
+.fourColMargin {
+  background-color: #FFFFFF;
+  padding: 4% 4%;
+}
+
 // ----------------- User Show ----------------- 
 .welcomeText {
   align: center; 
   display: inline-block;
+}
+
+.oneColMarginProfile {
+  font-family: Helvetica Neue,Helvetica,Arial,sans-serif; 
+  padding: 4% 4%;
+}
+
+.fourColMarginFit {
+  margin-top: 15%;
+  padding-top: 15%;
+
+}
+
+.zeroColMarginRaces {
+  margin-top: 5%;
+  padding-top: 15%;
 }
 
 .aboutTextDiv{
@@ -138,7 +177,8 @@ p {
 }
 
 .profileImage {
-  width: 20%;
+  padding: 5% 5%; 
+  width: 50%;
   float: left;
   display: inline-block;
 }
@@ -147,33 +187,7 @@ p {
   margin-top: 2%; 
   margin-bottom: 2%; 
 }
-.zeroColMargin {
-  font-family: Helvetica Neue,Helvetica,Arial,sans-serif; 
-  background-color: #5DFDCB;
-  padding: 2% 2%;
-}
-.oneColMargin {
-  font-family: Helvetica Neue,Helvetica,Arial,sans-serif; 
-  background-color: #90D7FF;
-  padding: 4% 4%;
-}
-.oneColMarginProfile {
-  font-family: Helvetica Neue,Helvetica,Arial,sans-serif; 
-  background-color: #90D7FF;
-  padding-bottom: 4% 4%;
-}
-.twoColMargin {
-  background-color: #C9F9FF;
-  padding: 4% 4%;
-}
-.threeColMargin {
-  background-color: #BFD0E0;
-  padding: 4% 4%;
-}
-.fourColMargin {
-  background-color: #B8B3BE;
-  padding: 4% 4%;
-}
+
 .racesColMargin{
   padding: 4% 4%;
 }
@@ -198,11 +212,7 @@ p {
   padding-left: 5%;
 }
 
-.fourColMarginFit {
-  background-color: #B8B3BE;
-  margin-top: 15%;
-  padding-top: 15%;
-}
+
 
 .ui.header.races {
   padding: 2% 2%;
