@@ -3,7 +3,12 @@ app.controller("UsersController", ["$scope", "$http", "$location", function($sco
     //TO DO 
     //set up envServiceProvider
     console.log($location.host());
+    $scope.connectToFitbit = function(){
+        $http.get('/users/auth/fitbit/').then(function(data){
+            $scope.fitbit_data = data.data;
+        });
 
+    };
     //get data from '/users/data.json' 
     //data for users/angular
     $http.get('/users/data.json').then(function(data){
@@ -11,6 +16,7 @@ app.controller("UsersController", ["$scope", "$http", "$location", function($sco
     	$scope.user_email = $scope.user_data.email;
     	$scope.user_name = $scope.user_data.first_name; 
     	$scope.user_image = $scope.user_data.image_url;
+        $scope.user_image = $scope.user_data.races;
     });
 }]);
 
@@ -32,7 +38,10 @@ app.controller("RaceController", ["$scope", "$http", function($scope, $http) {
         msPerDay = 24 * 60 * 60 * 1000 ;
         race_daysLeft = daysUntilRace / msPerDay;
         $scope.daysLeft = Math.floor(race_daysLeft);
-        console.log($scope.daysLeft);
+    });
+
+    $http.get('/auth/fitbit/').then(function(data){
+
     });
 }]);
 

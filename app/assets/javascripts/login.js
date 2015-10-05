@@ -6,3 +6,5 @@ $('.message')
       .transition('fade');
   });
 });
+
+

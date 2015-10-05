@@ -1,5 +1,6 @@
 class CallbacksController < Devise::OmniauthCallbacksController
-  before_action :authenticate_user!, only: [:fitbit]
+before_action :authenticate_user!, only: [:fitbit]
+
 
   def facebook
     # devise creates user
