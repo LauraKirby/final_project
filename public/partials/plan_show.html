@@ -9,19 +9,18 @@
   </div>
   
   <div class="ten wide column">
-    
-     {{steps_data}}
+
   <div class="ui top attached pink segment header"><h2>Today's Plan</h2></div>
 
   <table class="ui bottom attached striped table">
     <tbody>
       <tr>
         <td>Focus: </td>
-        <!-- <td>{{two_weeks_before[0].focus}}</td> -->
+        <td>{{focus}}</td>
       </tr>
       <tr>
         <td>Activity: </td>
-        <!-- <td>{{two_weeks_before[0].activity}}</td> -->
+        <td>{{activity}}</td>
       </tr>
       <tr>
         <td>Completed: </td>
@@ -49,7 +48,7 @@
       <th>Completed</th>
     </thead>
     <tbody>
-      <tr ng-repeat="day in two_weeks_before">
+      <tr ng-repeat="day in steps_data">
         <td>Day {{day.day}}</td>
         <td>{{day.focus}}</td>
         <td>{{day.difficulty}}</td>
