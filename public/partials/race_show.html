@@ -1,22 +1,25 @@
 <ng-include src="'/partials/nav_bar.html'"></ng-include>
 <div ng-controller="RaceController">
   
-<div class="ui container">
-  <div class="ui top attached">
-    <h2 class="ui header">{{races_data[current_race].name}}</h2>
-    <div class="ui section divider"></div>  
-  </div>
+
+
 
 <div class="ui grid">
-
+  <div class="one wide column"></div>
+  <div class="fourteen wide column">
+    <div class="ui top attached aboutRaceHeader">
+      <h2 class="ui header">{{races_data[current_race].name}}</h2>
+      <div class="ui section divider"></div>  
+    </div>
+  </div>
   <div class="one wide column"></div>
 
-  <div class="four wide column">
+  <div class="one wide column"></div>
+  <div class="three wide column">
     <img class="ui rounded image medium" ng-src="{{races_data[current_race].image}}" alt="race image">
   </div>
-
   <div class="one wide column"></div>
-  <div class="nine wide column">
+  <div class="ten wide column">
     <div class="ui top attached yellow segment header">Race Specs</div>
       <table class="ui attached striped table">
         <tbody>
@@ -44,8 +47,7 @@
       </table>
     </div>
 
-
+<div class="one wide column"></div>
 </div> <!-- ui grid -->
 
 </div> <!-- RaceController -->
-</div>

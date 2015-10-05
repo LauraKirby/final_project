@@ -1,26 +1,23 @@
 
+ <div class="imageLogin">
+   <%= image_tag("runners_dark.png", class:"ui fluid image") %> 
+
+ 
+<div class="loginBlock">
   
-<div class="ui container"> 
-<div class="ui grid">
-  <div class="one wide column"></div>
-  <div class="seven wide column">
-    <div class="aboutTextDiv">
-      <p class="ui message boxView">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
-    </div>
-  </div>
-  <div class="one wide column"></div>
-  <div class="five wide column ">
-    <div class="ui middle aligned center aligned grid">
-      <div class="column">
+  <div class="ui grid">
+    <div class="one wide column"></div>
+      <div class="five wide column center aligned">
       <%= form_for(resource, as: resource_name, url: session_path(resource_name), :html => {:class => 'ui.large.form'}) do |f| %>
           
-        <h2 class="ui teal image header">
-          <%= image_tag("runner_icon.png", class:"image") %> 
-          <div class="content">
-            Log-in to your account
-          </div>
-        </h2>
-          <div class="ui stacked segment">
+        <div class="ui stacked segment loginBlock">
+          <h2 class="ui green image header">
+            <%= image_tag("runner_icon.png", class:"image") %> 
+            <div class="content">
+              Log-in to your account
+            </div>
+          </h2>
+          
             
             <div class="field">
               <div class="ui left icon input">
@@ -45,7 +42,7 @@
             
             
             <div class="field">
-              <%= f.submit "Log in", :class => 'ui fluid large teal submit button'%>
+              <%= f.submit "Log in", :class => 'ui fluid large pink submit button'%>
             </div>
               
             <div class="field">
@@ -64,19 +61,12 @@
 
         </div>
       </div>
-    
+    <div class="one wide column"></div>
   </div>
-  <div class="one wide column"></div>
-
-</div>
-
-
-
-
+  
 
 
 </div>
+</div>
 
-  
-  
 

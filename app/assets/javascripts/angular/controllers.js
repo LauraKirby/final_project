@@ -60,12 +60,11 @@ app.controller("ProfileController", ["$scope", "$http", function($scope, $http) 
 
 app.controller("PlanController", ["$scope", "$http", function($scope, $http) {
     $http.get('users/plan.json').then(function(data){
-        $scope.steps_data = data.data;
         $scope.two_weeks_before = $scope.steps_data.two_weeks_before; 
-        $scope.general = $scope.steps_data.two_weeks_before[0].day.focus;
-        $scope.description = $scope.steps_data.two_weeks_before[0].day.description;
-        $scope.activityOne = $scope.steps_data.two_weeks_before[0].day.activity;
-        $scope.duration = $scope.steps_data.two_weeks_before[0].day.duration;
+        $scope.general = $scope.steps_data.two_weeks_before[0].focus;
+        $scope.description = $scope.steps_data.two_weeks_before[0].description;
+        $scope.activityOne = $scope.steps_data.two_weeks_before[0].activity;
+        $scope.duration = $scope.steps_data.two_weeks_before[0].duration;
         // $scope.weekOne = $scope.steps_data.two_weeks_before;
         // console.log($scope.weekOne);
     });

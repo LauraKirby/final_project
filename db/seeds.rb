@@ -4,7 +4,7 @@
 #when adding a user with devise you must add email, password & password_confirmation
 
 #create two users
-user_1 = User.create(first_name: "Thomas", last_name: "The Train", password:"thomas@example.com", password_confirmation: "thomas@example.com", email:"thomas@example.com", image_url: "https://bit.ly/1MoVWkm", current_race: 0)
+user_1 = User.create(first_name: "Vy", last_name: "Lu", password:"vy@example.com", password_confirmation: "vy@example.com", email:"vy@example.com", image_url: "https://bit.ly/1MoVWkm", current_race: 0)
 user_2 = User.create(first_name: "Olivia", last_name: "The Pig", password:"olivia@example.com", password_confirmation: "olivia@example.com", email: "olivia@example.com", image_url:"https://bit.ly/1LLPIIr", current_race: 1)
 
 #Parse races JSON into Ruby hash
@@ -23,19 +23,20 @@ boston = Race.create(name: races_hash["races"][1]["name"], distance: races_hash[
 b2b_plan = FitnessPlan.create(plan_title: "Bay To Breakers", plan_summary: "Preparing for a 15k is fun! We have outlined a few steps that will help you prepare for race day")
 
 #create two steps
-b2b_day_1 = Step.create(title: b2b_step["two_weeks_before"][0]["day_1"]["focus"], summary: b2b_step["two_weeks_before"][0]["day_1"]["activity_description"])
-b2b_day_2 = Step.create(title: b2b_step["two_weeks_before"][1]["day_2"]["focus"], summary: b2b_step["two_weeks_before"][1]["day_2"]["activity_description"])
-b2b_day_3 = Step.create(title: b2b_step["two_weeks_before"][2]["day_3"]["focus"], summary: b2b_step["two_weeks_before"][2]["day_3"]["activity_description"])
-b2b_day_4 = Step.create(title: b2b_step["two_weeks_before"][3]["day_4"]["focus"], summary: b2b_step["two_weeks_before"][3]["day_4"]["activity_description"])
-b2b_day_5 = Step.create(title: b2b_step["two_weeks_before"][4]["day_5"]["focus"], summary: b2b_step["two_weeks_before"][4]["day_5"]["activity_description"])
-b2b_day_6 = Step.create(title: b2b_step["two_weeks_before"][5]["day_6"]["focus"], summary: b2b_step["two_weeks_before"][5]["day_6"]["activity_description"])
-b2b_day_7 = Step.create(title: b2b_step["two_weeks_before"][6]["day_7"]["focus"], summary: b2b_step["two_weeks_before"][6]["day_7"]["activity_description"])
 
-b2b_day_8 = Step.create(title: b2b_step["one_week_before"][0]["day_8"]["focus"], summary: b2b_step["one_week_before"][0]["day_8"]["activity_description"])
-b2b_day_9 = Step.create(title: b2b_step["one_week_before"][1]["day_9"]["focus"], summary: b2b_step["one_week_before"][1]["day_9"]["activity_description"])
-b2b_day_10 = Step.create(title: b2b_step["one_week_before"][2]["day_10"]["focus"], summary: b2b_step["one_week_before"][2]["day_10"]["activity_description"])
-b2b_day_11 = Step.create(title: b2b_step["one_week_before"][3]["day_11"]["focus"], summary: b2b_step["one_week_before"][3]["day_11"]["activity_description"])
-b2b_day_12 = Step.create(title: b2b_step["one_week_before"][4]["day_12"]["focus"], summary: b2b_step["one_week_before"][4]["day_12"]["activity_description"])
+b2b_day_1 = Step.create(title: b2b_step["two_weeks_before"][1]["focus"], summary: b2b_step["two_weeks_before"][0]["activity"])
+b2b_day_2 = Step.create(title: b2b_step["two_weeks_before"][2]["focus"], summary: b2b_step["two_weeks_before"][1]["activity"])
+b2b_day_3 = Step.create(title: b2b_step["two_weeks_before"][3]["focus"], summary: b2b_step["two_weeks_before"][2]["activity"])
+b2b_day_4 = Step.create(title: b2b_step["two_weeks_before"][4]["focus"], summary: b2b_step["two_weeks_before"][3]["activity"])
+b2b_day_5 = Step.create(title: b2b_step["two_weeks_before"][5]["focus"], summary: b2b_step["two_weeks_before"][4]["activity"])
+b2b_day_6 = Step.create(title: b2b_step["two_weeks_before"][6]["focus"], summary: b2b_step["two_weeks_before"][5]["activity"])
+b2b_day_7 = Step.create(title: b2b_step["two_weeks_before"][7]["focus"], summary: b2b_step["two_weeks_before"][6]["activity"])
+
+b2b_day_8 = Step.create(title: b2b_step["two_weeks_before"][8]["focus"], summary: b2b_step["two_weeks_before"][7]["activity"])
+b2b_day_9 = Step.create(title: b2b_step["two_weeks_before"][9]["focus"], summary: b2b_step["two_weeks_before"][8]["activity"])
+b2b_day_10 = Step.create(title: b2b_step["two_weeks_before"][10]["focus"], summary: b2b_step["two_weeks_before"][9]["activity"])
+b2b_day_11 = Step.create(title: b2b_step["two_weeks_before"][11]["focus"], summary: b2b_step["two_weeks_before"][10]["activity"])
+b2b_day_12 = Step.create(title: b2b_step["two_weeks_before"][12]["focus"], summary: b2b_step["two_weeks_before"][11]["activity"])
 
 #create completed step by adding adding a user id and step id
 user_step = CompletedStep.create(user_id: user_1.id, step_id: b2b_day_1.id)

@@ -236,6 +236,9 @@ p {
   float: left;
   display: inline-block;
 }
+.aboutRaceHeader{
+  margin-top: 5%;
+}
 
 // ----------------- Race Show ----------------- 
 
@@ -246,4 +249,17 @@ p {
 }
 .clearColMarginNoP {
   margin-top: 5%;
+}
+// ----------------- Login ----------------- 
+.imageLogin{
+  position: relative; 
+  width: 100%; /* for IE 6 */
+}
+
+.loginBlock { 
+   position: absolute; 
+   top: 5%; 
+   left: 0; 
+   width: 100%; 
+   min-width: 300px;
 }
