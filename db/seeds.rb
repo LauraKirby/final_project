@@ -4,7 +4,7 @@
 #when adding a user with devise you must add email, password & password_confirmation
 
 #create two users
-user_1 = User.create(first_name: "Vy", last_name: "Lu", password:"vy@example.com", password_confirmation: "vy@example.com", email:"vy@example.com", image_url: "https://bit.ly/1MoVWkm", current_race: 0)
+user_1 = User.create(first_name: "Laura", last_name: "Kirby", password:"laura@example.com", password_confirmation: "laura@example.com", email:"laura@example.com", image_url: "https://scontent-sea1-1.xx.fbcdn.net/hphotos-xaf1/t31.0-8/10931067_10153305767521354_6827969216291293340_o.jpg", current_race: 0)
 user_2 = User.create(first_name: "Olivia", last_name: "The Pig", password:"olivia@example.com", password_confirmation: "olivia@example.com", email: "olivia@example.com", image_url:"https://bit.ly/1LLPIIr", current_race: 1)
 
 #Parse races JSON into Ruby hash

@@ -3,12 +3,7 @@ app.controller("UsersController", ["$scope", "$http", "$location", function($sco
     //TO DO 
     //set up envServiceProvider
     console.log($location.host());
-    $scope.connectToFitbit = function(){
-        $http.get('/users/auth/fitbit/').then(function(data){
-            $scope.fitbit_data = data.data;
-        });
-
-    };
+    
     //get data from '/users/data.json' 
     //data for users/angular
     $http.get('/users/data.json').then(function(data){
@@ -31,9 +26,6 @@ app.controller("RaceController", ["$scope", "$http", function($scope, $http) {
     $http.get('/races.json').then(function(data){
         $scope.races_data = data.data.races;
         $scope.race_name = $scope.races_data[0].name;
-        // $scope.selectRace = function(){
-        //     $scope.current_race = 0;
-        // };
         $scope.raceDate = new Date($scope.races_data[0].dateWeb);
         $scope.current_race = 0;
         $scope.today = new Date(); 
@@ -42,6 +34,16 @@ app.controller("RaceController", ["$scope", "$http", function($scope, $http) {
         race_daysLeft = daysUntilRace / msPerDay;
         $scope.daysLeft = Math.floor(race_daysLeft);
     });
+
+    $scope.sendData = function(){
+        console.log("h");
+        var data = {title:$scope.selectRace};
+        console.log(data);
+        // $http.post('/blah', data).then(function(data){
+        
+        // });
+
+    };
 }]);
 
 app.controller("ProfileController", ["$scope", "$http", function($scope, $http) {

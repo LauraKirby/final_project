@@ -23,28 +23,32 @@
   </div>
 
   <div class="seven wide column">
-    <div class="ui top attached yellow segment header">Race Details</div>
+    <div class="ui top attached yellow segment header"><h2>Race Details</h2></div>
       <table class="ui attached striped table">
         <tbody>
           <tr>
-            <td>Date of Race</td>
-            <td>{{races_data[current_race].date}}</td>
+            <td class="message">Date of Race</td>
+            <td class="message">{{races_data[current_race].date}}</td>
           </tr>
           <tr>
-            <td>About</td>
-            <td>{{races_data[current_race].about}}</td>
+            <td class="message">Days until Race</td>
+            <td class="message">{{daysLeft}}</td>
           </tr>
           <tr>
-            <td>Distance</td>
-            <td>{{races_data[current_race].distance}}</td>
+            <td class="message">About</td>
+            <td class="message">{{races_data[current_race].about}}</td>
           </tr>
           <tr>
-            <td>Cost:</td>
-            <td>Cost: {{races_data[current_race].cost | currency}}</td>
+            <td class="message">Distance</td>
+            <td class="message">{{races_data[current_race].distance}}</td>
           </tr>
           <tr>
-            <td>Transportation:</td>
-            <td>{{races_data[current_race].transportation}}</td>
+            <td class="message">Cost:</td>
+            <td class="message">Cost: {{races_data[current_race].cost | currency}}</td>
+          </tr>
+          <tr>
+            <td class="message">Transportation:</td>
+            <td class="message">{{races_data[current_race].transportation}}</td>
           </tr>
         </tbody>
       </table>

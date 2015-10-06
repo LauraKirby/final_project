@@ -12,18 +12,18 @@
 
   <div class="ui top attached pink segment header"><h2>Today's Plan</h2></div>
 
-  <table class="ui bottom attached striped table">
+  <table class="ui bottom attached striped large table">
     <tbody>
       <tr>
-        <td>Focus: </td>
-        <td>{{focus}}</td>
+        <td class="message">Focus: </td>
+        <td class="message">{{focus}}</td>
       </tr>
       <tr>
-        <td>Activity: </td>
-        <td>{{activity}}</td>
+        <td class="message">Activity: </td>
+        <td class="message">{{activity}}</td>
       </tr>
       <tr>
-        <td>Completed: </td>
+        <td class="message">Completed: </td>
         <td>
           <div class="ui radio checkbox">
             <input type="radio" name="radio" checked="checked">
@@ -40,19 +40,19 @@
 
  <div class="ui top attached blue segment header"><h2>Fitness Summary</h2></div>
 
-  <table class="ui bottom attached striped table">
+  <table class="ui bottom attached striped large table">
     <thead>
-      <th>Date</th>
-      <th>Focus</th>
-      <th>Level</th>
-      <th>Completed</th>
+      <th class="message">Date</th>
+      <th class="message">Focus</th>
+      <th class="message">Level</th>
+      <th class="message">Completed</th>
     </thead>
     <tbody>
       <tr ng-repeat="day in steps_data">
-        <td>Day {{day.day}}</td>
-        <td>{{day.focus}}</td>
-        <td>{{day.difficulty}}</td>
-        <td>
+        <td class="message">Day {{day.day}}</td>
+        <td class="message">{{day.focus}}</td>
+        <td class="message">{{day.difficulty}}</td>
+        <td class="message">
           <div class="ui radio checkbox">
             <input type="radio" name="radio" checked="checked">
             <label></label>

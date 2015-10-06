@@ -1,7 +1,11 @@
-@font-face {
-     font-family: Thonburi-Bold;
-     src: url('pathway/Thonburi-Bold.otf'); 
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+@font-face { 
+  font-family: Delicious; src: url('Delicious-Roman.otf'); 
+} 
+@font-face { 
+  font-family: Delicious; font-weight: bold; src: url('Delicious-Bold.otf'); 
 }
+
 
 // ----------------- General ----------------- 
 
@@ -11,15 +15,18 @@ html, body {
   margin: 0;
 }
 body {
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light";
+  
 }
 
 body > .grid {
  height: 100%;
 }
 
+.bodyText{
+  font-size:120%;
+  
+}
 h1 {
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light";
   font-size: 24px;
   font-style: normal;
   font-variant: normal;
@@ -28,7 +35,6 @@ h1 {
 }
 
 h2{
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light";
   font-size: 24px;
   font-style: normal;
   font-variant: normal;
@@ -37,21 +43,11 @@ h2{
 }
 
 h3 {
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 14px;
   font-style: normal;
   font-variant: normal;
   font-weight: 500;
   line-height: 15.4px;
-}
-
-p {
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-size: 14px;
-  font-style: normal;
-  font-variant: normal;
-  font-weight: 400;
-  line-height: 20px;
 }
 
 .main.container {
@@ -61,11 +57,6 @@ p {
 .ui.container {
   padding-top: 5em;
   padding-bottom: 5em;
-}
-
-.bodyText {
-  font-family: 'HelveticaNeue=Light', 'Helevtica Neue Light';
-  font-size: 120%;
 }
 
 .field {
@@ -161,14 +152,12 @@ p {
 }
 
 .fourColMarginFit {
-  margin-top: 15%;
-  padding-top: 15%;
-
+  margin-top: 5%;
 }
 
 .zeroColMarginRaces {
   margin-top: 5%;
-  padding-top: 15%;
+  padding-top: 5%;
 }
 
 .aboutTextDiv{
@@ -212,8 +201,6 @@ p {
   padding-left: 5%;
 }
 
-
-
 .ui.header.races {
   padding: 2% 2%;
 }
@@ -223,7 +210,17 @@ p {
   width: auto;
   float:right
 }
+.zeroColMarginSelect{
+  margin-top: 2%
+}
+.twoColMarginUser{
+  background-color: #FFFFFF;
+  radius: 10px;
+}
+.fourColMarginMessage {
+  padding: 2% 2%;
 
+}
 // ----------------- Race Index ----------------- 
 
 .ui.container.races {
@@ -264,4 +261,13 @@ p {
    left: 0; 
    width: 100%; 
    min-width: 300px;
+}
+.ui.visible.message {
+  font-size: 120%
+}
+.message {
+  font-size: 120%
+}
+.blue {
+  background-color: blue;
 }
