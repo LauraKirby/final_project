@@ -14,8 +14,14 @@ html, body {
   padding: 0;
   margin: 0;
 }
-body {
-  
+.darkGray{
+  background-color: #3F3F3F;
+}
+.green {
+  color: #2EBE45;
+}
+.lightGray{
+  background-color: rgba(225, 225, 225, .8);
 }
 
 body > .grid {
@@ -214,13 +220,24 @@ h3 {
   margin-top: 2%
 }
 .twoColMarginUser{
-  background-color: #FFFFFF;
   radius: 10px;
 }
 .fourColMarginMessage {
   padding: 2% 2%;
 
 }
+.twoColMarginUserTwo {
+ 
+}
+.ui.header.welcome{
+  color: #FFFFFF;  
+  padding: 0%;
+  margin: 0%;
+}
+.ui.circular.avatar.small.bordered.image {
+  margin: 5%;
+}
+
 // ----------------- Race Index ----------------- 
 
 .ui.container.races {
@@ -270,4 +287,8 @@ h3 {
 }
 .blue {
   background-color: blue;
+}
+//----------------- Plan Show ------------------
+.ui.bottom.attached.striped.large.table{
+  margin-bottom: 10%;
 }

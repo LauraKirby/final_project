@@ -42,7 +42,6 @@ app.controller("RaceController", ["$scope", "$http", function($scope, $http) {
         // $http.post('/blah', data).then(function(data){
         
         // });
-
     };
 }]);
 

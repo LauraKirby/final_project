@@ -12,14 +12,15 @@ class RacesController < ApplicationController
 	def show 
 	end 
 
-
 	#to-do refactor to find race by id through route params
 	def about_b2b
 		b2b = Race.first
 		about = b2b.about
-			respond_to do |format|
-				format.json {render json:about}
-			end 
+		render json: about
+			# respond_to do |format|
+			# 	format.json {render json:about}
+			# 	format.html {render html:current_user, :partial => "races/index.html.erb"}
+			# end 
 	end 
 
 	def about_boston
@@ -27,7 +28,7 @@ class RacesController < ApplicationController
 		about = boston.about
 		respond_to do |format|
 			format.json {render json:about}
+
 		end 
 	end 
-
 end

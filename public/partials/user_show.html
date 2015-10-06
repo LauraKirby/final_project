@@ -1,39 +1,48 @@
 <ng-include src="'/partials/nav_bar.html'"></ng-include>
-
-
-
-<div class="ui container">
-
-
-  
 <div ng-controller="RaceController">
-  <div class="ui top attached">
-    <h1 class="ui header">Welcome Laura</h1>
-    <div class="ui section divider"></div>  
+
+ <div class="twoColMarginUserTwo">
+  <div class="ui grid  darkGray">
+  <div class="five wide column"></div>
+  <div class="six wide column center aligned">
+    <p><img class="ui circular avatar small bordered image" ng-src="/images/laura.png" alt="user image"></p>
+    <h2 class="ui header welcome">Hi Laura!</h2>
+    <p class="green">Workout plan 0% done</p>
   </div>
+  <div class="five wide column"></div>
+  </div>
+ </div>
+
+ <div class="ui container">
+
+
+  <div class="ui grid">
+  <div class="two wide column"></div>  
+  <div class="fourteen wide column">
+    
+
 
   <div class="twoColMarginUser">
+    <h1 class="ui header">On your mark, Get set... Go!</h1>
     <table class="ui basic large table">
       <tbody>
         <tr>
           <td>
-            <h1 class="ui header"><img class="ui circular avatar small bordered image" ng-src="/images/laura.png" alt="user image"></h1></td>
+            <p >Sync your FitBit data with your fitness plan</p>
           <td>
               <div class="right aligned fourColMarginFit">
-                <p class="ui visible message">Begin integrating your Fitbit data with your race fitness plan</p>
-                <a href="/users/auth/fitbit/"class="ui large orange basic button">Connect with<img class="ui small image fit" ng-src="/images/fitbit_logo.png" alt="fitbit bordered image"></a>
+                <a href="/users/auth/fitbit/"class="ui large green button">Sync with<img class="ui small image fit" ng-src="/images/fitbit_logo.png" alt="fitbit bordered image"></a>
               </div>
           </td> 
         </tr>
         <tr>
-          <td></td>
           <td>
-            <div class="aligned right zeroColMarginRaces">
-              <p class="ui visible message">Select a race to begin preparing for your next professional race</p>
-            </div>
+            <p >What are you training for?</p>
+          </td>
+          <td>
             <div class="aligned right zeroColMarginSelect">
-              <div class="ui large basic menu">
-                <div class="menu">
+              <div class="ui large green menu">
+                <div class="green menu">
                   <select id="sel" ng-change="sendData()" class="item" ng-model="selectRace" ng-options="race.name as race.name for race in races_data">
                     <option value="">Select Race</option>
                   </select>
@@ -42,14 +51,26 @@
             </div>
           </td>
         </tr>
+        <tr>
+          <td>
+            Prepare for the race
+          </td>
+          <td>
+            <div class="aligned right zeroColMarginSelect">
+             <p>
+               <a href="#plan"class="ui large green button">Create Fitness Plan</a>
+             </p>
+            </div>
+          </td>
+        </tr>
       </tbody>
-    </table>
+     </table>
+    </div>
+   <div class="one wide column"></div>  
   </div>
-
+ </div>
 </div> <!-- end ng-controller RaceController-->
+
   
-  <div class="fourColMarginMessage">
-      <h3 class="ui basic message">Remember to checkout your <a href="#plan">fitness plan</a> to begin preparing for the race.</h3>
-  </div>
 
 </div>
