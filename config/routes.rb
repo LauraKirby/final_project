@@ -7,8 +7,8 @@ Rails.application.routes.draw do
 	  get '/logout' => 'devise/sessions#destroy'
     post 'auth/facebook', to: 'devise_ios_rails/oauth#facebook'
 	end
-	root to: 'static_assets#index'
-  
+	root to: '/static_assets#index'
+  get '/', to: 'static_assets#index'
   get '/users', to: 'static_assets#index'
 
   #all data for one user
@@ -20,8 +20,8 @@ Rails.application.routes.draw do
   #iOS routes
   get '/race_b2b.json', to: 'races#about_b2b'
 
-  get 'users/plan', to: 'fitness_plans#index'
-  get 'users/plansummary', to: 'fitness_plans#summary'
+  get '/users/plan', to: 'fitness_plans#index'
+  get '/users/plansummary', to: 'fitness_plans#summary'
 
   resources :races do 
   	resources :fitness_plan, shallow: true
