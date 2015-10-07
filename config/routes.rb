@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 	  get '/logout' => 'devise/sessions#destroy'
     post 'auth/facebook', to: 'devise_ios_rails/oauth#facebook'
 	end
-	root to: '/static_assets#index'
+	root to: 'static_assets#index'
   get '/users', to: 'static_assets#index'
 
   #all data for one user

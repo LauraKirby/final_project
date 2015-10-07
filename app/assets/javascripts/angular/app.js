@@ -20,7 +20,7 @@ app.config(['$httpProvider', '$routeProvider', function($httpProvider, $routePro
     })
     .when('/team',{
       templateUrl: '/partials/team_show.html', 
-    }).otherwiser({
+    }).otherwise({
       redirectTo: '/'
     });
 
