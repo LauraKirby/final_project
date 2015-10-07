@@ -8,7 +8,6 @@ Rails.application.routes.draw do
     post 'auth/facebook', to: 'devise_ios_rails/oauth#facebook'
 	end
 	root to: '/static_assets#index'
-  get '/', to: 'static_assets#index'
   get '/users', to: 'static_assets#index'
 
   #all data for one user
