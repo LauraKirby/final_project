@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  devise_ios_rails_for :users, :controllers => { 
+  devise_for :users, :controllers => { 
   	:omniauth_callbacks => "callbacks" }
 	#signout with: http://localhost:3000/logout
 	devise_scope :user do

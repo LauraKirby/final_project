@@ -34,7 +34,6 @@ gem 'omniauth-fitbit'
 
 # add token auth for ios token auth, must use version 1.8
 gem 'simple_token_authentication', '1.8'
-gem 'devise-ios-rails'
 
 # Use Fitbit API
 gem 'fitgem'
