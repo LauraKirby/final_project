@@ -13,6 +13,7 @@ class RacesController < ApplicationController
 	end 
 
 	#to-do refactor to find race by id through route params
+	#will be show actions
 	def about_b2b
 		b2b = Race.first
 		about = b2b.about
@@ -31,4 +32,22 @@ class RacesController < ApplicationController
 
 		end 
 	end 
+
+	def edit 
+		#if race id doesn't exist in array, then push race id
+		current_user.races << [race:id]
+
+	end 
+
+	private
+
+	def user_params
+		params.require(:user).permit(
+			:first_name,
+			:last_name,
+			:email,
+			:image_url,
+			:race_id
+			)
+	end	
 end

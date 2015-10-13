@@ -1,19 +1,22 @@
 <ng-include src="'/partials/nav_bar.html'"></ng-include>
-<div ng-controller="RaceController">
 
+<div ng-controller="UsersController">
+  
  <div class="twoColMarginUserTwo">
   <div class="ui grid  darkGray">
   <div class="five wide column"></div>
   <div class="six wide column center aligned">
     <p><img class="ui circular avatar small bordered image" ng-src="/images/laura.png" alt="user image"></p>
-    <h2 class="ui header welcome">Hi Laura!</h2>
+    <h2 class="ui header welcome">Hi {{user_name}}!</h2>
     <p class="green">Workout plan 0% done</p>
   </div>
   <div class="five wide column"></div>
   </div>
  </div>
 
- <div class="ui container">
+</div> <!-- end UsersController -->
+
+<div class="ui container">
 
 
   <div class="ui grid">
@@ -21,7 +24,7 @@
   <div class="fourteen wide column">
     
 
-
+ <div ng-controller="RaceController">
   <div class="twoColMarginUser">
     <h1 class="ui header">On your mark, Get set... Go!</h1>
     <table class="ui basic large table">
@@ -63,13 +66,13 @@
             </div>
           </td>
         </tr>
-      </tbody>
-     </table>
-    </div>
-   <div class="one wide column"></div>  
+       </tbody>
+      </table>
+     </div>
+    <div class="one wide column"></div>  
+   </div>
   </div>
- </div>
-</div> <!-- end ng-controller RaceController-->
+ </div> <!-- end ng-controller RaceController-->
 
   
 

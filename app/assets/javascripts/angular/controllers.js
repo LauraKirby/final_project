@@ -12,8 +12,8 @@ app.controller("UsersController", ["$scope", "$http", "$location", function($sco
     	$scope.user_name = $scope.user_data.first_name; 
     	$scope.user_image = $scope.user_data.image_url;
         $scope.user_races = $scope.user_data.races;
-        $scope.about_fitness = $scope.user_data.races[0].fitness_plan;
-        console.log($scope.about_fitness);
+        // $scope.about_fitness = $scope.user_data.races[0].fitness_plan;
+        console.log($scope.user_email);
     });
 
 }]);
@@ -39,9 +39,9 @@ app.controller("RaceController", ["$scope", "$http", function($scope, $http) {
         console.log("h");
         var data = {title:$scope.selectRace};
         console.log(data);
-        // $http.post('/blah', data).then(function(data){
+        $http.post('/races', data).then(function(data){
         
-        // });
+         });
     };
 }]);
 
