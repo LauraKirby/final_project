@@ -36,16 +36,24 @@ app.controller("RaceController", ["$scope", "$http", function($scope, $http) {
     });
 
     $scope.sendData = function(){
-        console.log("h");
-        var data = {title:$scope.selectRace};
+        var data = {race:{
+            name: $scope.selectRace,
+            race_id: "2"
+            } 
+        }
         console.log(data);
-        $http.post('/races', data).then(function(data){
-        
+        $http.post('/races', data).then(function(response){
+            console.log($scope.data);
+            $scope.status = response.status; 
+            // $scope.data = response.data; 
+            
+            // console.log(response);
          });
     };
 }]);
 
 app.controller("ProfileController", ["$scope", "$http", function($scope, $http) {
+    $scope.race_name;
     $http.get('/users/data.json').then(function(data){
         $scope.user_data = data.data;
         $scope.user_email = $scope.user_data.email;

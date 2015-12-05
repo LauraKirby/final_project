@@ -1,4 +1,4 @@
-var app = angular.module("HealthyMe", ["ngRoute"]);
+var app = angular.module("HealthyMe", ["ngRoute", "ngResource"]);
 
 //handles same origin policy issues
 app.config(['$httpProvider', '$routeProvider', function($httpProvider, $routeProvider) {
@@ -26,4 +26,3 @@ app.config(['$httpProvider', '$routeProvider', function($httpProvider, $routePro
 
 
 }]);
-

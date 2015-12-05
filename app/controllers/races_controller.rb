@@ -9,7 +9,14 @@ class RacesController < ApplicationController
 			end 
 	end 
 
-	def show 
+	def create
+		# I need to find the specific race that I would like to add here
+
+		binding.pry
+		add_race = Race.find_by(id:race_params[:race_id])
+		current_user.races << add_race
+		# current_user.races << Race.create(race_params)
+		render :index
 	end 
 
 	#to-do refactor to find race by id through route params
@@ -29,7 +36,6 @@ class RacesController < ApplicationController
 		about = boston.about
 		respond_to do |format|
 			format.json {render json:about}
-
 		end 
 	end 
 
@@ -41,12 +47,9 @@ class RacesController < ApplicationController
 
 	private
 
-	def user_params
-		params.require(:user).permit(
-			:first_name,
-			:last_name,
-			:email,
-			:image_url,
+	def race_params
+		params.require(:race).permit(
+			:name,
 			:race_id
 			)
 	end	
