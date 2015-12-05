@@ -188,7 +188,7 @@ h3 {
 }
 
 .navColMargin {
-  padding: 2% 2%;
+  padding-bottom: 2%;
   color: #C9F9FF;
 }
 
@@ -291,4 +291,13 @@ h3 {
 //----------------- Plan Show ------------------
 .ui.bottom.attached.striped.large.table{
   margin-bottom: 10%;
+}
+
+//----------------- Signup ------------------
+.signup-block {
+   margin-top: 5%; 
+   margin-bottom: 5%; 
+   left: 0; 
+   width: 100%; 
+   min-width: 300px;
 }
