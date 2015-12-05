@@ -36,18 +36,14 @@ app.controller("RaceController", ["$scope", "$http", function($scope, $http) {
     });
 
     $scope.sendData = function(){
-        var data = {race:{
-            name: $scope.selectRace,
-            race_id: "2"
-            } 
-        }
+        var data = {race: {
+                            name: $scope.selectRace
+                          } 
+                    };
         console.log(data);
         $http.post('/races', data).then(function(response){
             console.log($scope.data);
             $scope.status = response.status; 
-            // $scope.data = response.data; 
-            
-            // console.log(response);
          });
     };
 }]);

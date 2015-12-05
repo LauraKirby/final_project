@@ -10,17 +10,12 @@ class RacesController < ApplicationController
 	end 
 
 	def create
-		# I need to find the specific race that I would like to add here
-
-		binding.pry
-		add_race = Race.find_by(id:race_params[:race_id])
+		add_race = Race.find_by(name:race_params[:name])
 		current_user.races << add_race
-		# current_user.races << Race.create(race_params)
 		render :index
 	end 
 
 	#to-do refactor to find race by id through route params
-	#will be show actions
 	def about_b2b
 		b2b = Race.first
 		about = b2b.about
@@ -49,8 +44,7 @@ class RacesController < ApplicationController
 
 	def race_params
 		params.require(:race).permit(
-			:name,
-			:race_id
+			:name
 			)
 	end	
 end
