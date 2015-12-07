@@ -226,6 +226,9 @@ h3 {
   padding: 2% 2%;
 
 }
+.second-header {
+  margin-bottom: 20px;
+}
 .ui.header.welcome{
   color: #FFFFFF;  
   padding: 0%;
@@ -263,12 +266,18 @@ h3 {
 .twoRaceShow {
   margin-top: 5%; 
 }
+.ui.text.container {
+  padding-bottom: 5%;
+}
 // ----------------- Team Show ----------------- 
 .clearColMargin {
-  margin-top: 10%;
+  margin-top: 5%;
   padding: 4% 4%;
 }
 .clearColMarginNoP {
+  margin-top: 5%;
+}
+.add-friends {
   margin-top: 5%;
 }
 // ----------------- Login ----------------- 

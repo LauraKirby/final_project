@@ -1,61 +1,83 @@
 <ng-include src="'/partials/nav_bar.html'"></ng-include>
 
-  <div class="ui text container">
-      <h1 class="ui dividing header center aligned">Team Jelly Bean</h1>
-
-			<div class="clearColMarginNoP"></div>
-			<div class="ui horizontal section divider">Members</div>
-			<p class="right aligned">Add friends <i class="large facebook square icon"></i></p>
-			<div class="ui equal width grid">
-			  <div class="row clearColMarginNoP">
-			    <div class="column"><img class="ui small circular image" ng-src="images/michelle.png" alt="Team Member" /></div>
-			    <div class="column"><img class="ui small circular image" ng-src="images/shawna.png" alt="Team Member" /></div>
-			    <div class="column"><img class="ui small circular image" ng-src="images/angie.png" alt="Team Member" /></div>
-			    <div class="column"><img class="ui small circular image" ng-src="images/laura.png" alt="Team Member" /></div>
-			  </div>
-			  <div class="row">
-			    <div class="column"></div>
-			    <div class="column"></div>
-			  </div>
-			</div>
-
-
-	<div class="clearColMargin">
-    <div class="ui top attached message">
-      <h3>Message Board</h3>
+<div class="second-header">
+  <div class="ui grid darkGray">
+    <div class="sixteen wide column">
+      <h2 class="ui header welcome center aligned">Team Jelly Bean</h2>
     </div>
-    <table class="ui attached table">
-      <tbody>
-        <tr>
-          <td><img class="ui mini circular image" ng-src="images/shawna.png" alt="Team Member" /></td>
-          <td>"Ok team, Bay to Breakers is coming up. I vote that we dress up as bags of Jelly Bellies!"
-          <img class="ui small image" ng-src="images/jellybelly.jpg" alt=""></td>
-        </tr>
-        <tr>
-          <td><img class="ui mini circular image" ng-src="images/laura.png" alt="Team Member" /></td>
-          <td>"Awesome, let's wear neon wigs"
-          <img class="ui small rounded image" ng-src="images/bluewig.png" alt="">
-          </td>
-        </tr>
-        <tr>
-          <td><img class="ui mini circular image" ng-src="images/michelle.png" alt="Team Member" /></td>
-          <td>"I made necklaces"
-          <img class="ui small rounded image" ng-src="images/jellybellylogo.jpg" alt="">
-          </td>
-        </tr>
-        <tr>
-          <td><img class="ui mini circular image" ng-src="images/shawna.png" alt="Team Member" /></td>
-          <td>"That was fun! I cannot wait until next year."
-          <img class="ui medium rounded image" ng-src="images/thatwasfun.png" alt="">
-          </td>
-        </tr>
-      </tbody>
+  </div>
+</div>
 
-    </table>
-      <div class="clearColMarginNoP ">
-        <div class="ui fluid large pink button">
-          New Comment
-        </div>
+<div class="ui text container">
+  <div class="ui equal width grid">
+    <div class="row clearColMargin">
+      <div class="column">
+        <img class="ui small circular image" ng-src="images/michelle.png" alt="Team Member"/>
       </div>
+      <div class="column">
+        <img class="ui small circular image" ng-src="images/shawna.png" alt="Team Member"/>
+      </div>
+      <div class="column">
+        <img class="ui small circular image" ng-src="images/angie.png" alt="Team Member"/>
+      </div>
+      <div class="column">
+        <img class="ui small circular image" ng-src="images/laura.png" alt="Team Member"/>
+      </div>
+    </div>
   </div>
+  <div class="add-friends">
+    <span class="right aligned">Add friends
+      <i class="large facebook square icon"></i>
+    </span>
   </div>
+</div>
+
+<div class="clearColMargin">
+  <div class="ui top attached message">
+    <h3>Message Board</h3>
+  </div>
+
+  <table class="ui attached table">
+    <tbody>
+      <tr>
+        <td>
+          <img class="ui mini circular image" ng-src="images/shawna.png" alt="Team Member"/></td>
+        <td>
+          <span>"Ok team, Bay to Breakers is coming up. I vote that we dress up as bags of Jelly Bellies!"</span>
+          <img class="ui small image" ng-src="images/jellybelly.jpg" alt="member-upload">
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <img class="ui mini circular image" ng-src="images/laura.png" alt="Team Member"/></td>
+        <td>
+          <span>"Awesome, let's wear neon wigs"</span>
+          <img class="ui small rounded image" ng-src="images/bluewig.png" alt="member-upload">
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <img class="ui mini circular image" ng-src="images/michelle.png" alt="Team Member"/></td>
+        <td>
+          <span>"I made necklaces"</span>
+          <img class="ui small rounded image" ng-src="images/jellybellylogo.jpg" alt="member-upload">
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <img class="ui mini circular image" ng-src="images/shawna.png" alt="Team Member"/></td>
+        <td>
+          <span>"That was fun! I cannot wait until next year."</span>
+          <img class="ui medium rounded image" ng-src="images/thatwasfun.png" alt="member-upload">
+        </td>
+      </tr>
+    </tbody>
+  </table>
+      
+  <div class="clearColMarginNoP ">
+    <div class="ui fluid large pink button">
+      <span>New Comment</span>
+    </div>
+  </div>
+
+</div> <!-- end clearMargin -->
