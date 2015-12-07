@@ -3,10 +3,10 @@
 <div ng-controller="UsersController">
   
  <div class="twoColMarginUserTwo">
-  <div class="ui grid  darkGray">
+  <div class="ui grid darkGray">
   <div class="five wide column"></div>
   <div class="six wide column center aligned">
-    <p><img class="ui circular avatar small bordered image" ng-src="/images/laura.png" alt="user image"></p>
+    <p><img class="ui circular avatar small bordered image" ng-src="{{user_image}}" alt="user image"></p>
     <h2 class="ui header welcome">Hi {{user_name}}!</h2>
     <p class="green">Workout plan 0% done</p>
   </div>
@@ -31,42 +31,36 @@
       <tbody>
         <tr>
           <td>
-            <p >Sync your FitBit data with your fitness plan</p>
-          <td>
-              <div class="right aligned fourColMarginFit">
-                <a href="/users/auth/fitbit/"class="ui large green button">Sync with<img class="ui small image fit" ng-src="/images/fitbit_logo.png" alt="fitbit bordered image"></a>
-              </div>
+            <p>Sync your FitBit data with fitness plan</p>
           </td> 
+          <td>
+            <a href="/users/auth/fitbit/" class="ui large green button">Sync with<img class="ui small image fit" ng-src="/images/fitbit_logo.png" alt="fitbit bordered image"></a>
+          </td>
         </tr>
         <tr>
           <td>
-            <p >What are you training for?</p>
+            <p>What are you training for?</p>
           </td>
           <td>
-            <div class="aligned right zeroColMarginSelect">
-              <div class="ui large green menu">
-                <div class="green menu">
-                  <select id="sel" ng-change="sendData()" class="item" ng-model="selectRace" ng-options="race.name as race.name for race in races_data">
-                    <option value="">Select Race</option>
-                  </select>
-                </div>
-              </div>
-              <div>
+            <span class="ui green six item large inverted menu">
+                <select id="sel" ng-change="sendData()" class="item" ng-model="selectRace" ng-options="race.name as race.name for race in races_data">
+                  <option value="">Select Race</option>
+                </select>
+            </span>
+              <!-- <div> -->
                <!-- /\ <p>My race: {{selectRace}}</p> -->
-              </div>
-            </div>
+              <!-- </div> -->
+            <!-- </span> -->
           </td>
         </tr>
         <tr>
           <td>
-            Prepare for the race
+             <p>
+               <span>Prepare for the race</span>
+             </p>
           </td>
           <td>
-            <div class="aligned right zeroColMarginSelect">
-             <p>
-               <a href="#plan"class="ui large green button">Create Fitness Plan</a>
-             </p>
-            </div>
+            <a href="#plan"class="ui large green button">Create Fitness Plan</a>
           </td>
         </tr>
        </tbody>
@@ -76,7 +70,3 @@
    </div>
   </div>
  </div> <!-- end ng-controller RaceController-->
-
-  
-
-</div>

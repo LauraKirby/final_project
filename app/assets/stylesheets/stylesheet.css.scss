@@ -226,9 +226,6 @@ h3 {
   padding: 2% 2%;
 
 }
-.twoColMarginUserTwo {
- 
-}
 .ui.header.welcome{
   color: #FFFFFF;  
   padding: 0%;
@@ -237,7 +234,15 @@ h3 {
 .ui.circular.avatar.small.bordered.image {
   margin: 5%;
 }
-
+.ui.green.six.item.inverted.menu {
+  max-width: 200px;
+}
+.ui.green.six.item.inverted.menu > select  {
+  min-width: 100%;
+}
+.ui.basic.large.table{
+  max-width: 600px;
+}
 // ----------------- Race Index ----------------- 
 
 .ui.container.races {
