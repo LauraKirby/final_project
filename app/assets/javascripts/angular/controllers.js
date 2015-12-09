@@ -2,62 +2,75 @@ app.controller("UsersController", ["$scope", "$http", "$location", function($sco
 	$scope.testing = "testing";
     //TO DO 
     //set up envServiceProvider
-    console.log($location.host());
+    // console.log($location.host());
     
     //get data from '/users/data.json' 
     //data for users/angular
     $http.get('/users/data.json').then(function(data){
-    	$scope.user_data = data.data;
-    	$scope.user_email = $scope.user_data.email;
-    	$scope.user_name = $scope.user_data.first_name; 
-    	$scope.user_image = $scope.user_data.image_url;
-        $scope.user_races = $scope.user_data.races;
-        // $scope.about_fitness = $scope.user_data.races[0].fitness_plan;
-        console.log($scope.user_email);
+    	//added returnedData as a property to user_data to have the data returned stored an untampered with object.
+        $scope.user_data = {};
+        $scope.user_data = data.data; 
+        //do not need to write out all of these properties on user_data because they already exist, 
+        //however, it will make my code more readable
+        //Go back to users_controller, to modify the current_user properties that are sent to the client
+        $scope.user_data = {
+            email: $scope.user_data.email,
+            first_name: $scope.user_data.first_name,
+            last_name: $scope.user_data.last_name,
+            image_url: $scope.user_data.image_url,
+            races: $scope.user_data.races,
+            current_race: $scope.user_data.current_race
+        };
+        console.log($scope.user_data.current_race);
     });
-
 }]);
+
+//It is better to create objects so you can work with primitives
+// app.controller("ProfileController", ["$scope", "$http", function($scope, $http) {
+    // $scope.race_name;
+    // $http.get('/users/data.json').then(function(data){
+    //     $scope.user_data = data.data;
+    //     console.log($scope.user_data)
+    //     $scope.user_email = $scope.user_data.email;
+    //     $scope.user_name = $scope.user_data.first_name; 
+    //     $scope.user_image = $scope.user_data.image_url;
+    //     $scope.current_race = $scope.user_data.current_race;
+    //     console.log($scope.current_race);
+    // });
+// }]);
 
 app.controller("RaceController", ["$scope", "$http", function($scope, $http) {
     $scope.selectRace;
     $scope.currentRace = 0;
     $scope.racesCompleted = 2; 
-    //$scope.today = new Date.now(); 
+    // $scope.today = new Date.now(); 
     $http.get('/races.json').then(function(data){
         $scope.races_data = data.data.races;
-        $scope.race_name = $scope.races_data[0].name;
-        $scope.raceDate = new Date($scope.races_data[0].dateWeb);
-        $scope.current_race = 0;
+        // console.log($scope.races_data);
+        $scope.race_name = $scope.races_data[$scope.user_data.current_race].name;
+        $scope.raceDate = new Date($scope.races_data[$scope.user_data.current_race].dateWeb);
+        // $scope.current_race = 0;
         $scope.today = new Date(); 
         daysUntilRace = ($scope.today.getTime() - $scope.raceDate.getTime());
         msPerDay = 24 * 60 * 60 * 1000 ;
         race_daysLeft = daysUntilRace / msPerDay;
         $scope.daysLeft = Math.floor(race_daysLeft);
     });
-
     $scope.sendData = function(){
-        var data = {race: {
-                            name: $scope.selectRace
-                          } 
+        var data =  {
+                      race: {
+                              name: $scope.selectRace
+                            } 
                     };
-        console.log(data);
         $http.post('/races', data).then(function(response){
-            console.log($scope.data);
-            $scope.status = response.status; 
+            $scope.status = response.status;
+            $scope.current_race = parseInt(response.data.id) - 1;
+            // console.log($scope.status);
+            // console.log(response.data);
+            // console.log($scope.current_race);
          });
     };
 }]);
-
-app.controller("ProfileController", ["$scope", "$http", function($scope, $http) {
-    $scope.race_name;
-    $http.get('/users/data.json').then(function(data){
-        $scope.user_data = data.data;
-        $scope.user_email = $scope.user_data.email;
-        $scope.user_name = $scope.user_data.first_name; 
-        $scope.user_image = $scope.user_data.image_url;
-    });
-}]);
-
 
 app.controller("PlanController", ["$scope", "$http", function($scope, $http) {
     $http.get('/users/plan.json').then(function(data){
@@ -66,12 +79,11 @@ app.controller("PlanController", ["$scope", "$http", function($scope, $http) {
         $scope.activity = $scope.steps_data[0].activity;
         $scope.duration = $scope.steps_data[0].duration;
         
-        console.log($scope.activityOne);
+        // console.log($scope.activityOne);
     });
     $http.get('users/plansummary.json').then(function(data){
         $scope.planSummary = data.data.plan_summary;
         $scope.planDiscription = $scope.planSummary[0].summary;
-
     });
 }]);
 

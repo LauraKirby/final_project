@@ -8,7 +8,7 @@ app.config(['$httpProvider', '$routeProvider', function($httpProvider, $routePro
   $routeProvider
     .when('/', {
       templateUrl: '/partials/user_show.html', 
-      controller: 'ProfileController'
+      controller: 'UsersController'
     })
     .when('/race', {
       templateUrl: '/partials/race_show.html', 
