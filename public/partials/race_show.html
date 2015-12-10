@@ -5,7 +5,7 @@
 <div class="second-header">
   <div class="ui grid darkGray">
     <div class="sixteen wide column">
-      <h2 class="ui header welcome center aligned">{{races_data[current_race].name}}</h2>
+      <h2 class="ui header welcome center aligned">{{race_name}}</h2>
     </div>
   </div>
 </div>
@@ -24,7 +24,7 @@
         <tbody>
           <tr>
             <td class="message">Date of Race</td>
-            <td class="message">{{races_data[current_race].date}}</td>
+            <td class="message">{{races_data[user_data.current_race].date}}</td>
           </tr>
           <tr>
             <td class="message">Days until Race</td>
@@ -32,19 +32,19 @@
           </tr>
           <tr>
             <td class="message">About</td>
-            <td class="message">{{races_data[current_race].about}}</td>
+            <td class="message">{{races_data[user_data.current_race].about}}</td>
           </tr>
           <tr>
             <td class="message">Distance</td>
-            <td class="message">{{races_data[current_race].distance}}</td>
+            <td class="message">{{races_data[user_data.current_race].distance}}</td>
           </tr>
           <tr>
             <td class="message">Cost:</td>
-            <td class="message">Cost: {{races_data[current_race].cost | currency}}</td>
+            <td class="message">Cost: {{races_data[user_data.current_race].cost | currency}}</td>
           </tr>
           <tr>
             <td class="message">Transportation:</td>
-            <td class="message">{{races_data[current_race].transportation}}</td>
+            <td class="message">{{races_data[user_data.current_race].transportation}}</td>
           </tr>
         </tbody>
       </table>
