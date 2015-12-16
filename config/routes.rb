@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
 
   devise_for :users, :controllers => { 
-  	:omniauth_callbacks => "callbacks" }
-	#signout with: http://localhost:3000/logout
+  	:omniauth_callbacks => "callbacks",
+    registrations: 'registrations'}
 	devise_scope :user do
 	  get '/logout' => 'devise/sessions#destroy'
     post 'auth/facebook', to: 'devise_ios_rails/oauth#facebook'

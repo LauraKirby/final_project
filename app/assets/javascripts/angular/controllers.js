@@ -1,10 +1,7 @@
 app.controller("UsersController", ["$scope", "$http", "$location", "userService", function($scope, $http, $location, userService) {
-    
     userService.getUser().then(function(user_data){
         $scope.user = user_data;
-        console.log($scope.user);
     });
-
 }]);
 
 app.controller("RaceController", ["$scope", "$http", function($scope, $http) {
