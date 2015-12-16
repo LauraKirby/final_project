@@ -4,62 +4,54 @@
   
     <div class="ui grid">
       <div class="one wide column"></div>
-        <div class="five wide column center aligned">
+      <div class="five wide column center aligned">
         <%= form_for(resource, as: resource_name, url: session_path(resource_name), :html => {:class => 'ui.large.form'}) do |f| %>
-            
           <div class="ui stacked segment loginBlock">
-            <h2 class="ui green image header">
-              <%= image_tag("runner_icon.png", class:"image") %> 
-              <div class="content">
-                Log-in to your account
-              </div>
-            </h2>
-
-              <div class="field">
-                <div class="ui left icon input">
-                  <i class="user icon"></i>
-                    <%= f.email_field :email, :placeholder => "Email address", autofocus: true %>
+            <div class="content">
+              <h2 class="ui green image header">
+                  <%= image_tag("runner_icon.png", class:"image") %> 
+                <div>
+                  <p class="headerLogin">Log-in to your account</p>
                 </div>
-              </div>
-
-              <div class="field">
-                <div class="ui left icon input">
-                  <i class="lock icon"></i>
-                    <%= f.password_field :password, :placeholder => "Password", autocomplete: "off" %>
-                </div>
-              </div>
-
-              <div class="field">
-                 <% if devise_mapping.rememberable? -%>
-                 <%= f.check_box :remember_me%>
-                 <%= f.label :remember_me %>
-                 <% end -%>
-              </div>
-              
-              <div class="field">
-                <%= f.submit "Log in", :class => 'ui fluid large pink submit button'%>
-              </div>
-                
-              <div class="field">
-                  <%= render "devise/shared/links" %>
-              </div>
-              
+              </h2>
             </div>
-          
-            <div class="ui message">
-              New to us? <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
-              <%= link_to "Sign up", new_registration_path(resource_name) %>
-              <% end -%>
+            <div class="field">
+              <div class="ui left icon input">
+                <i class="user icon"></i>
+                  <%= f.email_field :email, :placeholder => "Email address", autofocus: true %>
+              </div>
             </div>
-              
-           <% end %>
-
+            <div class="field">
+              <div class="ui left icon input">
+                <i class="lock icon"></i>
+                  <%= f.password_field :password, :placeholder => "Password", autocomplete: "off" %>
+              </div>
+            </div>
+            <div class="field">
+               <% if devise_mapping.rememberable? -%>
+               <%= f.check_box :remember_me%>
+               <%= f.label :remember_me %>
+               <% end -%>
+            </div>
+            <div class="field">
+              <%= f.submit "Log in", :class => 'ui fluid large pink submit button'%>
+            </div>
+            <div class="field">
+                <%= render 'layouts/messages' %>
+                <%= render "devise/shared/links" %>
+            </div>
+          </div> <!-- end ui stacked segment loginBlock -->
+          <div class="ui message moreOptions">
+             New to us? <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
+             <%= link_to "Sign up", new_registration_path(resource_name) %>
+             <% end -%>
           </div>
-        </div>
+          <% end %>
+        </div> <!-- end five wide  -->
       <div class="one wide column"></div>
-    </div>
-  
-</div>
+    </div> <!-- end ui grid  -->
+
+  </div> <!-- end login block -->
 </div>
 
 

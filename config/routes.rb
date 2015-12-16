@@ -11,13 +11,12 @@ Rails.application.routes.draw do
 	end
 
 	root to: 'static_assets#index'
-
   get '/users', to: 'static_assets#index'
 
-  #all data for one user
+  #current_user data
   get '/users/data', to: 'users#user_data'
 
-  #all data for races
+  #races data
   get '/races', to: 'races#index'
 
   #iOS routes
@@ -33,9 +32,7 @@ Rails.application.routes.draw do
   	resources :fitness_plan, shallow: true
   end 
   
-  # match '*a', :to => 'static_assets#page_not_found', via: :get
-  # get '*a', :to => 'static_assets#page_not_found'
-
+  match '*a', :to => 'static_assets#page_not_found', via: :get
 end
 
 

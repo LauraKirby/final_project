@@ -302,7 +302,7 @@ olMarginMessage {
 
 // ----------------- Login ----------------- 
 .imageLogin{
-  position: relative; 
+  position: absolute; 
   width: 100%; /* for IE 6 */
 }
 
@@ -314,17 +314,31 @@ olMarginMessage {
    min-width: 300px;
 }
 
+.ui.fluid.image {
+  width: 100%;
+  min-width: 900px;
+}
+
 .ui.visible.message {
   font-size: 120%;
-  top: 0%;
 }
 
 .message {
   font-size: 120%;
+  border-radius: 5px;
 }
 
-.blue {
-  background-color: blue;
+.message > div {
+  border-radius: 5px;
+}
+
+.message > div > li {
+  padding-left: 2%;
+}
+
+.headerLogin{
+  padding-top: 5%;
+  padding-bottom: 5%;
 }
 
 //----------------- Plan Show ------------------
@@ -333,16 +347,15 @@ olMarginMessage {
 }
 
 //----------------- Signup ------------------
-.signup-block {
-   margin-top: 5%; 
-   margin-bottom: 5%; 
-   left: 0; 
-   width: 100%; 
-   min-width: 300px;
+.sign-up-block {
+   margin-top: 5%;
+   margin-bottom: 5%;
 }
 
-.footerColMargin {
-  position: absolute; 
-  bottom: 3%;
-  padding-left: 5%;
+.sign-up-form {
+  min-width: 300px;
+}
+
+.moreOptions {
+  min-width: 300px;
 }
