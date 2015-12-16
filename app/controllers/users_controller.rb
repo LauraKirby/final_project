@@ -40,4 +40,5 @@ end #end UsersController
 # To Do: 
 # Protect some properties of current_user so they are not available to the client
 # if user is authenticated, render this page
-# how can i add user.races to JSON object? 
+# how can i add user.races to JSON object?
+
