@@ -1,6 +1,9 @@
 class UsersController < ApplicationController
-# before action to check for authenticated user
-before_action :authenticate_user!
+before_action :authenticate_user!, except: [:about_app]
+
+	def about_app
+		render 'layouts/about_application'
+	end 
 
 	def index
 		if current_user
