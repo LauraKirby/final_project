@@ -1,13 +1,18 @@
 Rails.application.routes.draw do
 
   devise_for :users, :controllers => { 
-  	:omniauth_callbacks => "callbacks",
-    registrations: 'registrations'}
+  	:omniauth_callbacks => "callbacks"
+    # ,
+    # registrations: 'registrations'
+  }
+
 	devise_scope :user do
 	  get '/logout' => 'devise/sessions#destroy'
     post 'auth/facebook', to: 'devise_ios_rails/oauth#facebook'
 	end
+
 	root to: 'static_assets#index'
+
   get '/users', to: 'static_assets#index'
 
   #all data for one user
@@ -21,6 +26,9 @@ Rails.application.routes.draw do
 
   get '/users/plan', to: 'fitness_plans#index'
   get '/users/plansummary', to: 'fitness_plans#summary'
+
+  #about application
+  get '/about', to: 'users#about_app'
 
   resources :races do 
   	resources :fitness_plan, shallow: true
