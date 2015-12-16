@@ -2,8 +2,8 @@ app.service("userService", function($http) {
   //returns a promise
   return {
   	getUser: function(){
-  		$http.get('/users/data.json').then(function(data){
-    	//added returnedData as a property to user_data to have the data returned stored an untampered with object.
+  		return $http.get('/users/data.json').then(function(data){
+    	//added returned data as a property to user_data to have the data returned stored an untampered with object.
         user_data = {};
         user_data = data.data; 
         //do not need to write out all of these properties on user_data because they already exist, 
@@ -22,6 +22,7 @@ app.service("userService", function($http) {
         return user_data;
         
     });
+
    }
   };
 });
