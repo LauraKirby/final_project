@@ -26,7 +26,7 @@ Rails.application.routes.draw do
   	resources :fitness_plan, shallow: true
   end 
   
-  match '*a', :to => 'static_assets#page_not_found', via: :get
+  # match '*a', :to => 'static_assets#page_not_found', via: :get
   # get '*a', :to => 'static_assets#page_not_found'
 
 end
