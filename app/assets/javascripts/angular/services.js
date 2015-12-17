@@ -1,4 +1,4 @@
-app.service("userService", function($http) {
+app.service("userService", ['$http', function($http) {
   //returns a promise
   return {
   	getUser: function(){
@@ -11,7 +11,7 @@ app.service("userService", function($http) {
     });
    }
   };
-});
+}]);
 
 // app.service('HealthyMe', ['$resource', function($resource) {
 //   return $resource(
