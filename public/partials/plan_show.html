@@ -28,15 +28,6 @@
             <td class="message">Activity:</td>
             <td class="message">{{activity}}</td>
           </tr>
-          <tr>
-            <td class="message">Completed:</td>
-            <td>
-              <div class="ui radio checkbox">
-                <input type="radio" name="radio" checked="checked">
-                <label></label>
-              </div>
-            </td>
-          </tr>
         </tbody>
       </table>
 
@@ -68,19 +59,12 @@
           <th class="message">Date</th>
           <th class="message">Focus</th>
           <th class="message">Level</th>
-          <th class="message">Completed</th>
         </thead>
         <tbody>
           <tr ng-repeat="day in steps_data">
             <td class="message">Day {{day.day}}</td>
             <td class="message">{{day.focus}}</td>
             <td class="message">{{day.difficulty}}</td>
-            <td class="message">
-              <div class="ui radio checkbox">
-                <input type="radio" name="radio" checked="checked">
-                <label></label>
-              </div>
-            </td>
           </tr>
         </tbody>
       </table>

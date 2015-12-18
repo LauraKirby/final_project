@@ -286,6 +286,13 @@ olMarginMessage {
   padding-bottom: 5%;
 }
 
+.race-info-table{
+  margin-top: 5%;
+  margin-bottom: 5%;
+  min-width: 600px;
+  position: absolute
+}
+
 // ----------------- Team Show ----------------- 
 .clearColMargin {
   margin-top: 5%;
@@ -309,7 +316,7 @@ olMarginMessage {
 .loginBlock { 
    position: absolute; 
    top: 5%; 
-   left: 0; 
+   left: 5%; 
    width: 100%; 
    min-width: 300px;
 }
@@ -317,6 +324,7 @@ olMarginMessage {
 .ui.fluid.image {
   width: 100%;
   min-width: 900px;
+  min-height: 550px;
 }
 
 .ui.visible.message {
@@ -336,9 +344,37 @@ olMarginMessage {
   padding-left: 2%;
 }
 
-.headerLogin{
-  padding-top: 5%;
-  padding-bottom: 5%;
+
+#content > div > div > div > div.sixteen.wide.column > div > h1 {
+  padding-bottom: 1%;
+  padding-top: 1%;
+  margin-left: 2px;
+  padding-left: 5%;
+  margin-top: 1%;
+  font-size: 4em;
+  color: #21BA45;
+  text-shadow: 1px 1px black;
+}
+
+.floatTextRight {
+  float: left;
+  margin-top: 10%;
+  padding-top: 2%;
+  margin-right: 4%;
+  margin-left: 2%;
+  position: absolute;
+  max-width: 250px;
+}
+
+.darkBrown {
+  background-color: #E9E9ED;
+  opacity: .9;
+  padding-top: 2%;
+  padding-left: 2%;
+  padding-right: 2%;
+  padding-bottom: 2%;
+  border-radius: 2%;
+  margin-bottom: 1%;
 }
 
 //----------------- Plan Show ------------------
@@ -358,4 +394,5 @@ olMarginMessage {
 
 .moreOptions {
   min-width: 300px;
+  left: 5%;
 }

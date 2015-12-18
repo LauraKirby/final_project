@@ -1,9 +1,19 @@
 <div class="imageLogin">
   <%= image_tag("runners_dark.png", class:"ui fluid image") %> 
+
   <div class="loginBlock">
-  
     <div class="ui grid">
-      <div class="one wide column"></div>
+      <div class="sixteen wide column">
+        <div>
+        <h1 class="ui inverted huge header">
+          Healthy Me
+        </h1>
+      </div>
+    </div>
+    <div class="ui grid">
+      <div class="one wide column">
+  </div>
+      </div>
       <div class="five wide column center aligned">
         <%= form_for(resource, as: resource_name, url: session_path(resource_name), :html => {:class => 'ui.large.form'}) do |f| %>
           <div class="ui stacked segment loginBlock">
@@ -11,7 +21,7 @@
               <h2 class="ui green image header">
                   <%= image_tag("runner_icon.png", class:"image") %> 
                 <div>
-                  <p class="headerLogin">Log-in to your account</p>
+                  <p>Log-in</p>
                 </div>
               </h2>
             </div>
@@ -48,7 +58,17 @@
           </div>
           <% end %>
         </div> <!-- end five wide  -->
-      <div class="one wide column"></div>
+      <div class="three wide column"></div>
+      <div class="seven wide colum">
+        <div class="floatTextRight darkBrown">
+          <p>
+            To demo application, sign in using email: <strong>admin@example.com</strong> and password: <strong>password</strong>.
+          </p>
+          <p>
+            Healthy Me allows users to view information about professional running races and training plans. In progress, a user can sync their Fitbit to check-off training activities as they are completed. Additionally, a user will be able to create a running team from their Facebook friends.
+          </p>
+        </div>
+      </div>
     </div> <!-- end ui grid  -->
 
   </div> <!-- end login block -->

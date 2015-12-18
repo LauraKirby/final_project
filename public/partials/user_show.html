@@ -36,7 +36,7 @@
               </td>
               <td>
                 <span class="ui green six item large inverted menu">
-                  <select id="sel" ng-change="sendData()" class="item" ng-model="selectRace" ng-options="race.name as race.name for race in races_data">
+                  <select id="sel" ng-change="updateCurrentRace()" class="item" ng-model="selectRace" ng-options="race.name as race.name for race in races_data">
                     <option value="">Select Race</option>
                   </select>
                 </span>

@@ -5,7 +5,7 @@
 <div class="second-header">
   <div class="ui grid darkGray">
     <div class="sixteen wide column">
-      <h2 class="ui header welcome center aligned">{{race_name}}</h2>
+      <h2 class="ui header welcome center aligned">{{races_data[0].name}}</h2>
     </div>
   </div>
 </div>
@@ -14,42 +14,37 @@
   <div class="sixteen wide column"></div>
   
   <div class="one wide column"></div>
-  <div class="seven wide column">
-        <img class="ui rounded fluid image" ng-src="/images/sf_crowded_streets.jpeg" alt="race image">
-        <img class="ui rounded fluid image twoRaceShow" ng-src="/images/sf_ferry_building.jpg" alt="race image">
+  <div class="two wide column">
+    <img class="ui rounded fluid image" ng-src="/images/sf_crowded_streets.jpeg" alt="race image">
   </div>
-  <div class="seven wide column">
-    <div class="ui top attached yellow segment header"><h2>Race Details</h2></div>
+  <div class="ten wide column race-info-table">
+    <div class="ui top attached yellow segment header"><h2>Race Date: {{races_data[0].date}}</h2></div>
       <table class="ui attached striped table">
         <tbody>
-          <tr>
-            <td class="message">Date of Race</td>
-            <td class="message">{{races_data[user_data.current_race].date}}</td>
-          </tr>
           <tr>
             <td class="message">Days until Race</td>
             <td class="message">{{daysLeft}}</td>
           </tr>
           <tr>
             <td class="message">About</td>
-            <td class="message">{{races_data[user_data.current_race].about}}</td>
+            <td class="message">{{races_data[0].about}}</td>
           </tr>
           <tr>
             <td class="message">Distance</td>
-            <td class="message">{{races_data[user_data.current_race].distance}}</td>
+            <td class="message">{{races_data[0].distance}}</td>
           </tr>
           <tr>
             <td class="message">Cost:</td>
-            <td class="message">Cost: {{races_data[user_data.current_race].cost | currency}}</td>
+            <td class="message">Cost: {{races_data[0].cost | currency}}</td>
           </tr>
           <tr>
             <td class="message">Transportation:</td>
-            <td class="message">{{races_data[user_data.current_race].transportation}}</td>
+            <td class="message">{{races_data[0].transportation}}</td>
           </tr>
         </tbody>
       </table>
     </div>
-  <div class="one wide column"></div>
+  <div class="two wide column"></div>
 </div> <!-- ui grid -->
 
 </div> <!-- RaceController -->
