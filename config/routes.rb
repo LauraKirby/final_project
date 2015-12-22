@@ -13,15 +13,13 @@ Rails.application.routes.draw do
 	root to: 'static_assets#index'
   get '/users', to: 'static_assets#index'
 
-  #current_user data
+  #current_user
   get '/users/data', to: 'users#user_data'
 
-  #races data
-  get '/races', to: 'races#index'
+  #races
+  post '/races', to: 'races#add_race_to_user'
 
-  #iOS routes
-  get '/race_b2b.json', to: 'races#about_b2b'
-
+  #fittness plans
   get '/users/plan', to: 'fitness_plans#index'
   get '/users/plansummary', to: 'fitness_plans#summary'
 
