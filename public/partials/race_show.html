@@ -3,7 +3,7 @@
 <div class="second-header">
   <div class="ui grid darkGray">
     <div class="sixteen wide column">
-      <h2 class="ui header welcome center aligned">{{races_data[0].name}}</h2>
+      <h2 class="ui header welcome center aligned">{{race_name}}</h2>
     </div>
   </div>
 </div>
@@ -31,19 +31,19 @@
           </tr>
           <tr>
             <td class="message">About</td>
-            <td class="message">{{races_data[0].about}}</td>
+            <td class="message">{{race_about}}</td>
           </tr>
           <tr>
             <td class="message">Distance</td>
-            <td class="message">{{races_data[0].distance}}</td>
+            <td class="message">{{race_distance}}</td>
           </tr>
           <tr>
             <td class="message">Cost:</td>
-            <td class="message">Cost: {{races_data[0].cost | currency}}</td>
+            <td class="message">Cost: {{race_cost | currency}}</td>
           </tr>
           <tr>
             <td class="message">Transportation:</td>
-            <td class="message">{{races_data[0].transportation}}</td>
+            <td class="message">{{race_transportation}}</td>
           </tr>
         </tbody>
       </table>

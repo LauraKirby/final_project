@@ -1,49 +1,47 @@
 <ng-include src="'/partials/nav_bar.html'"></ng-include>
 
-
-  <div class="ui grid darkGray">
-    <div class="five wide column"></div>
-    <div class="six wide column center aligned">
-      <p>
-        <img class="ui circular avatar small bordered image" ng-src="{{user.image_url}}" alt="user image">
-      </p>
-      <h2 class="ui header welcome">Hi {{user.first_name}}</h2>
-      <a href="#plan" class="green">Fittness Plan</a>
-      <div ng-model="selection"></div>
-    </div>
-    <div class="five wide column">
-    </div>
+<div class="ui grid darkGray">
+  <div class="five wide column"></div>
+  <div class="six wide column center aligned">
+    <p>
+      <img class="ui circular avatar small bordered image" ng-src="{{user.image_url}}" alt="user image">
+    </p>
+    <h2 class="ui header welcome">Hi {{user.first_name}}</h2>
+    <a href="#plan" class="green">Fittness Plan</a>
+    <div ng-model="selection"></div>
   </div>
-
+  <div class="five wide column">
+  </div>
+</div>
 
 <div class="ui container">
   <div class="ui grid">
     <div class="two wide column">
     </div>  
     <div class="twelve wide column">
-        <h1 class="ui header center aligned">On your mark, Get set... Go!</h1>
-        <table class="ui basic large table">
-          <tbody>
-            <tr>
-              <td>
-                <p>Sync your FitBit data with fitness plan</p>
-                </td> 
-                <td>
-                  <a href="/users/auth/fitbit/" class="ui large green button">Sync with<img class="ui small image fit" ng-src="/images/fitbit_logo.png" alt="fitbit bordered image"></a>
-                </td>
-            </tr>
-            <tr>
-              <td>
-                <p>
-                  <span>My Races</span>
-                </p>
-              </td>
-              <td>
-                <p ng-repeat="race in user.races track by $index">{{race.name}}</p>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+      <h1 class="ui header center aligned">On your mark, Get set... Go!</h1>
+      <table class="ui basic large table">
+        <tbody>
+          <tr>
+            <td>
+              <p>Sync your FitBit data with fitness plan</p>
+            </td> 
+            <td>
+              <a href="/users/auth/fitbit/" class="ui large green button">Sync with<img class="ui small image fit" ng-src="/images/fitbit_logo.png" alt="fitbit bordered image"></a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p>
+                <span>My Races</span>
+              </p>
+            </td>
+            <td>
+              <p ng-repeat="race in user.races track by $index">{{race.name}}</p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </div> <!-- end twelve column wide -->
     <div class="two wide column"></div>  
   </div> <!-- end ui grid -->
