@@ -7,6 +7,10 @@ app.controller("UsersController", ["$scope", "$http", "$location", "userService"
 
 app.controller("RaceController", ["$scope", "$http", "userService", function($scope, $http, userService) {
     $scope.selectRace;
+    // fix: where should i put this so that I can use $scope.user.current_race in my races partial? 
+    // optimize: i have figured out a work around, see $http.get('/races.json')
+    // fix: ensure method below is done before race show page is rendered
+    // optimize: create a getCurrentRace service. do not need all user data, just current race
     userService.getUser().then(function(user_data){
         $scope.user = user_data;
         $scope.currentRace = $scope.user.current_race;
@@ -16,7 +20,7 @@ app.controller("RaceController", ["$scope", "$http", "userService", function($sc
         var data =  {
                       race: {
                               name: $scope.selectRace
-                              // save current_race to database
+                              // save this data to a user's current_race in database
                             } 
                     };
         $http.post('/races', data).then(function(response){
@@ -27,21 +31,30 @@ app.controller("RaceController", ["$scope", "$http", "userService", function($sc
     };
 
     $http.get('/races.json').then(function(data){
-        $scope.races_data = data.data.races;
-        console.log($scope.races_data);
         // races_data is an array of race objects
         // Each race object has: name, about, iOSImage,
         // date, thumbnail, cost, image, dateWeb, transportation
-
+        $scope.races_data = data.data.races;
+        console.log($scope.races_data);
         $scope.raceDate = new Date($scope.races_data[$scope.currentRace].dateWeb);
         $scope.today = new Date(); 
         daysUntilRace = ($scope.today.getTime() - $scope.raceDate.getTime());
         msPerDay = 24 * 60 * 60 * 1000 ;
         race_daysLeft = daysUntilRace / msPerDay;
+
+        // see notes regarding userService at top of RacesController
         $scope.daysLeft = Math.floor(race_daysLeft);
+        $scope.race_name = $scope.races_data[$scope.currentRace].name;
+        $scope.race_about = $scope.races_data[$scope.currentRace].about;
+        $scope.race_distance = $scope.races_data[$scope.currentRace].distance;
+        $scope.race_cost = $scope.races_data[$scope.currentRace].cost;
+        $scope.race_transportation = $scope.races_data[$scope.currentRace].transportation;
     });
     
 }]);
+
+
+
 
 app.controller("PlanController", ["$scope", "$http", function($scope, $http) {
     $http.get('/users/plan.json').then(function(data){
