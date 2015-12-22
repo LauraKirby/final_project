@@ -21,7 +21,6 @@
     <div class="two wide column">
     </div>  
     <div class="twelve wide column">
-
         <h1 class="ui header center aligned">On your mark, Get set... Go!</h1>
         <table class="ui basic large table">
           <tbody>
@@ -40,12 +39,11 @@
                 </p>
               </td>
               <td>
-                <p>list races here</p>
+                <p ng-repeat="race in user.races track by $index">{{race.name}}</p>
               </td>
             </tr>
           </tbody>
         </table>
-
     </div> <!-- end twelve column wide -->
     <div class="two wide column"></div>  
   </div> <!-- end ui grid -->
