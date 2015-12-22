@@ -5,28 +5,18 @@ app.controller("UsersController", ["$scope", "$http", "$location", "userService"
     });
 }]);
 
-app.controller("RaceController", ["$scope", "$http", function($scope, $http) {
+app.controller("RaceController", ["$scope", "$http", "userService", function($scope, $http, userService) {
     $scope.selectRace;
-    $scope.currentRace = 0;
-    $scope.racesCompleted = 2;
-    $http.get('/races.json').then(function(data){
-        $scope.races_data = data.data.races;
-        console.log($scope.races_data);
-        // races_data is an array of race objects
-        // Each race object has: name, about, iOSImage,
-        // date, thumbnail, cost, image, dateWeb, transportation
-        $scope.raceDate = new Date($scope.races_data[0].dateWeb);
-        $scope.current_race = 0;
-        $scope.today = new Date(); 
-        daysUntilRace = ($scope.today.getTime() - $scope.raceDate.getTime());
-        msPerDay = 24 * 60 * 60 * 1000 ;
-        race_daysLeft = daysUntilRace / msPerDay;
-        $scope.daysLeft = Math.floor(race_daysLeft);
+    userService.getUser().then(function(user_data){
+        $scope.user = user_data;
+        $scope.currentRace = $scope.user.current_race;
     });
+
     $scope.updateCurrentRace = function(){
         var data =  {
                       race: {
                               name: $scope.selectRace
+                              // save current_race to database
                             } 
                     };
         $http.post('/races', data).then(function(response){
@@ -35,6 +25,22 @@ app.controller("RaceController", ["$scope", "$http", function($scope, $http) {
             console.log(response.data.id);
          });
     };
+
+    $http.get('/races.json').then(function(data){
+        $scope.races_data = data.data.races;
+        console.log($scope.races_data);
+        // races_data is an array of race objects
+        // Each race object has: name, about, iOSImage,
+        // date, thumbnail, cost, image, dateWeb, transportation
+
+        $scope.raceDate = new Date($scope.races_data[$scope.currentRace].dateWeb);
+        $scope.today = new Date(); 
+        daysUntilRace = ($scope.today.getTime() - $scope.raceDate.getTime());
+        msPerDay = 24 * 60 * 60 * 1000 ;
+        race_daysLeft = daysUntilRace / msPerDay;
+        $scope.daysLeft = Math.floor(race_daysLeft);
+    });
+    
 }]);
 
 app.controller("PlanController", ["$scope", "$http", function($scope, $http) {
@@ -51,6 +57,16 @@ app.controller("PlanController", ["$scope", "$http", function($scope, $http) {
 }]);
 
 //TO DO 
+
+//user should be able to select a race with "updateCurrentRace"
+    //then the "about race" and "fitness plan" should be updated
+
+//if race already exsists within user.races, 
+    //then new race should not be added to user.races association
+
+//should i add a column to my User table for current_race? 
+//if i can get all the race data from the user object, 
+    //then I do not need to make a separate call to the races api
+
 //set up envServiceProvider
 //console.log($location.host());
-//user should be able to select a race with "sendData"

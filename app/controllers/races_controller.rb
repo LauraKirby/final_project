@@ -9,6 +9,7 @@ class RacesController < ApplicationController
 			end 
 	end 
 
+	#change to something like add_user_race
 	def create
 		add_race = Race.find_by(name:race_params[:name])
 		current_user.races << add_race

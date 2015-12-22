@@ -1,6 +1,6 @@
 <ng-include src="'/partials/nav_bar.html'"></ng-include>
 
-<div ng-controller="UsersController">
+
   <div class="ui grid darkGray">
     <div class="five wide column"></div>
     <div class="six wide column center aligned">
@@ -8,17 +8,20 @@
         <img class="ui circular avatar small bordered image" ng-src="{{user.image_url}}" alt="user image">
       </p>
       <h2 class="ui header welcome">Hi {{user.first_name}}</h2>
-      <p class="green">Workout plan 0% done</p>
+      <a href="#plan" class="green">Fittness Plan</a>
+      <div ng-model="selection"></div>
     </div>
-    <div class="five wide column"></div>
+    <div class="five wide column">
+    </div>
   </div>
-</div> <!-- end UsersController -->
+
 
 <div class="ui container">
   <div class="ui grid">
-    <div class="two wide column"></div>  
+    <div class="two wide column">
+    </div>  
     <div class="twelve wide column">
-      <div ng-controller="RaceController">
+
         <h1 class="ui header center aligned">On your mark, Get set... Go!</h1>
         <table class="ui basic large table">
           <tbody>
@@ -32,32 +35,17 @@
             </tr>
             <tr>
               <td>
-                <p>What are you training for?</p>
-              </td>
-              <td>
-                <span class="ui green six item large inverted menu">
-                  <select id="sel" ng-change="updateCurrentRace()" class="item" ng-model="selectRace" ng-options="race.name as race.name for race in races_data">
-                    <option value="">Select Race</option>
-                  </select>
-                </span>
-                   <!-- <div> -->
-                    <!-- /\ <p>My race: {{selectRace}}</p> -->
-                   <!-- </div> -->
-              </td>
-            </tr>
-            <tr>
-              <td>
                 <p>
-                  <span>Prepare for the race</span>
+                  <span>My Races</span>
                 </p>
               </td>
               <td>
-                <a href="#plan"class="ui large green button">Create Fitness Plan</a>
+                <p>list races here</p>
               </td>
             </tr>
           </tbody>
         </table>
-      </div> <!-- end ng-controller RaceController-->
+
     </div> <!-- end twelve column wide -->
     <div class="two wide column"></div>  
   </div> <!-- end ui grid -->

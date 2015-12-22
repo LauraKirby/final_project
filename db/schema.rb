@@ -101,6 +101,7 @@ ActiveRecord::Schema.define(version: 20151003042732) do
     t.integer  "race_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    # could add current_race = true
   end
 
   add_index "users_races", ["race_id"], name: "index_users_races_on_race_id", using: :btree

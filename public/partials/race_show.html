@@ -1,7 +1,5 @@
 <ng-include src="'/partials/nav_bar.html'"></ng-include>
 
-<div ng-controller="RaceController">
-
 <div class="second-header">
   <div class="ui grid darkGray">
     <div class="sixteen wide column">
@@ -12,12 +10,18 @@
 
 <div class="ui grid">
   <div class="sixteen wide column"></div>
-  
-  <div class="one wide column"></div>
-  <div class="two wide column">
-    <img class="ui rounded fluid image" ng-src="/images/sf_crowded_streets.jpeg" alt="race image">
-  </div>
+  <div class="three wide column"></div>
   <div class="ten wide column race-info-table">
+    <div>
+      <span class="ui green six item large inverted menu">
+        <select id="sel" ng-change="updateCurrentRace()" class="item" ng-model="selectRace" ng-options="race.name as race.name for race in races_data">
+          <option value="">Select New Race</option>
+        </select>
+      </span>
+         <!-- <div> -->
+          <!-- /\ <p>My race: {{selectRace}}</p> -->
+         <!-- </div> -->
+    </div>
     <div class="ui top attached yellow segment header"><h2>Race Date: {{races_data[0].date}}</h2></div>
       <table class="ui attached striped table">
         <tbody>
@@ -44,7 +48,5 @@
         </tbody>
       </table>
     </div>
-  <div class="two wide column"></div>
+  <div class="three wide column"></div>
 </div> <!-- ui grid -->
-
-</div> <!-- RaceController -->
